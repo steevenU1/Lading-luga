@@ -1,0 +1,135 @@
+:root{
+    --primary-color: #D1241F;
+    --secundary-color: #1d1d1b;
+    --tertiary-color: #8A8D8F;
+    --bg-color: #ffffff;
+
+}
+
+@font-face {
+    font-family: 'Circular';
+    src: url('../fonts/circular-std-medium-500.ttf');
+
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Circular', sans-serif;
+}
+
+/*Prueba de Segundo Header*/
+
+.main-header-container{
+
+}
+
+.nav-main-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.logo-nav-container img{
+    width: 60px;
+    height: 60px;
+}
+
+.main-info-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.info-container{
+    width: 40%;
+    height: auto;
+    max-height: 280px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.info-container h3{
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 4.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+}
+
+.info-container p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    margin-bottom: 15px;
+    padding: 0 30px;
+}
+
+.ov-btn-slide-left {
+    background: #fff; /* color de fondo */
+    color: var(--primary-color); /* color de fuente */
+    border: 2px solid var(--primary-color); /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-slide-left:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-left::after {
+    content: "";
+    background: var(--primary-color); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-left:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+.right-faces-container, .left-faces-container{
+    width: 30%;
+    height: auto;
+    max-height: 280px;
+}
+
+.right-faces-container img, .left-faces-container img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 380px) {
+    .info-container{
+        display: none;
+    }
+
+    .right-faces-container, .left-faces-container{
+        width: 50%;
+        height: auto;
+        max-height: 280px;
+    
+}

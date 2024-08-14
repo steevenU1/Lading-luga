@@ -1,0 +1,488 @@
+:root{
+    --primary-color: #D1241F;
+    --secundary-color: #1d1d1b;
+    --tertiary-color: #8A8D8F;
+    --bg-color: #ffffff;
+
+}
+
+@font-face {
+    font-family: 'Circular';
+    src: url('../fonts/circular-std-medium-500.ttf');
+
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Circular', sans-serif;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    height: 50px;
+    background-image: linear-gradient(
+  120deg,
+  hsl(2deg 74% 47%) 59%,
+  hsl(6deg 70% 54%) 86%,
+  hsl(8deg 74% 60%) 94%,
+  hsl(9deg 78% 66%) 97%,
+  hsl(10deg 83% 72%) 99%,
+  hsl(10deg 89% 78%) 100%,
+  hsl(10deg 94% 84%) 101%,
+  hsl(10deg 100% 89%) 101%,
+  hsl(11deg 100% 95%) 100%,
+  hsl(0deg 0% 100%) 100%
+);
+    
+    
+}
+
+.nav-logo{
+    width: 50%;
+    height: 60px;
+}
+
+.nav-logo img{
+    width: 60px;
+    height: 60px;
+}
+
+
+
+.up-main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-width: 320px;
+}
+
+.up-main--title{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.up-main--title img{
+    width: auto;
+    height: 250px;
+}
+
+
+.up-main--title h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Circular', sans-serif;
+}
+
+.grid-right-img{
+    width: 40%;
+    height: 400px;
+}
+
+.grid-right-img img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.down-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.grid-img{
+    width: 100%;
+    height: 300px;
+
+}
+
+.grid-img img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.credit-section{
+    display: flex;
+    /* background-color: var(--secundary-color); */
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    width: 100%;
+    height: auto;
+
+}
+
+.credit-section--title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--bg-color);
+    text-align: center;
+}
+
+.credit-section--title p{
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.credit-section-img{
+    display: flex;
+    width: 50%;
+    height: auto;
+    /* justify-content: flex-end; */
+
+}
+
+.credit-section-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.contact-button{
+    background-color: var(--primary-color);
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 7px 6px 12px -3px rgba(0,0,0,0.75);
+    position: relative;
+}
+
+
+
+.contact-button:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(68, 68, 68);
+    transition: all 0.2s ease;
+}
+
+.contact-button--link{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--bg-color);
+
+}
+
+.documents-section{
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    
+    background-color: var(--primary-color);
+}
+
+.documents-card--container{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.documents-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    width: 500px;
+    height: 250px;
+    background-color: var(--secundary-color);
+    border: none;
+    border-radius: 20px;
+    margin: 30px 15px;
+    box-shadow: 6px 7px 20px -6px rgba(0,0,0,0.75);
+
+}
+
+.documents-card .main-card-title{
+    font-size: 4.5rem; /*cambie tamaño despues de ajustar cards*/
+    font-weight: 800;
+}
+
+.documents-card h3{
+    font-size: 2.5rem; 
+    color: var(--bg-color);
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding: 0 10px;
+
+}
+
+.documents-card p{
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    color: var(--bg-color);
+    
+    padding: 0 30px;
+
+}
+.documents-card svg{
+    position: absolute;
+    top: -30px;
+}
+
+
+.store-main-section{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: var(--bg-color);
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 5px;
+    background-color: var(--secundary-color);
+}
+
+.store-main-section h2{
+    margin-top: 20px;
+}
+
+.store-card--container{
+    display: flex;
+    
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px 0;
+    margin: 15px 0;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+
+}
+
+
+.store-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0 20px 15px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px 0px rgba(230,230,230,0.05);
+    scroll-snap-align: center;
+
+}
+
+.store-card h3{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+
+.store-card p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2rem;
+    align-self: baseline;
+    width: 180px;
+    height: 60px;
+    padding: 5px;
+    /* margin-bottom: 20px; */
+}
+
+.store-card--img{
+    width: 180px;
+    height: 115px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    
+}
+
+.store-card--img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.map-button, .dial-button{
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 7px 6px 12px -3px rgba(0,0,0,0.75);
+    background-color: var(--secundary-color);
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.map-button a, .dial-button a{
+    text-decoration: none;
+    color: var(--bg-color);
+    font-weight: 600;
+}
+
+.map-button:hover, .dial-button:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(154, 99, 99);
+    transition: all 0.2s ease;
+}
+
+
+
+.aliance-section{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.aliance-section div{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--tertiary-color);
+
+}
+
+.partner-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 25%;
+    height: 200px; */
+    padding: 20px;
+}
+
+.logo{
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.aliance-section--partners{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px 0;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+}
+
+.providers-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: var(--tertiary-color);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.providers-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px 0;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+}
+
+.providers-card-container div{
+    margin: 20px;
+    justify-content: center;
+}
+
+@media (max-width:930px){
+    .up-main--title{
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .up-main--title h1{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .credit-section{
+        flex-direction: column;
+    }
+
+    .credit-section--title{
+        width: 100%;
+        padding: 10px;
+        
+    }
+
+    .credit-section--title h2{
+        margin-top: 20px;
+    }
+
+    .credit-section-img{
+        width: 100%;
+        height: 280px;
+        justify-content: flex-end;
+        margin-top: 40px;
+    }
+    .credit-section-img img{
+        width: 100%;
+        height: 100%;
+        
+        object-fit: contain;
+        object-position: bottom;
+    }
+
+    .grid-img--cero{
+        display: none;
+    }
+
+    .down-main{
+        
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+
+    .grid-right-img{
+        width: 50%;
+    }
+
+    .store-card--container::-webkit-scrollbar{
+        display: none;
+    }
+
+    /*MAnejando estilos para tablet y movil*/
+
+    .documents-card{
+        width: 250px;
+    }
+
+    .documents-card .main-card-title{
+        font-size: 2rem;
+        font-weight: 800;
+    }
+}
