@@ -316,6 +316,8 @@ nav{
     margin-bottom: 20px;
     border-radius: 8px;
     
+    object-position: center;
+    
 }
 
 .store-card--img img{
