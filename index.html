@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<script id="chat">
+<!-- Brevo Conversations {literal} -->
+<script>
     (function(d, w, c) {
-        w.BrevoConversationsID = '66ba5ba5282fcf5789088221';
+        w.BrevoConversationsID = '683fd5f288854f4a1c0f5f57';
         w[c] = w[c] || function() {
             (w[c].q = w[c].q || []).push(arguments);
         };
@@ -12,6 +13,7 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'BrevoConversations');
 </script>
+<!-- /Brevo Conversations {/literal} -->
 
 <head>
     <meta charset="UTF-8">
@@ -62,6 +64,36 @@
         </section>
     </main>
 
+        <div class="carousel-wrapper">
+  <div class="carousel-title">Disfruta de promociones exclusivas</div>
+  
+  <div class="carousel-container">
+    <div class="carousel-slides" id="carousel">
+      <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_70e69f3b.jpg" alt="Imagen 1">
+      <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_7110a503.jpg" alt="Imagen 2">
+      <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.19_37e43f51.jpg" alt="Imagen 3">
+    </div>
+    <button class="carousel-button" id="prevBtn">&#10094;</button>
+    <button class="carousel-button" id="nextBtn">&#10095;</button>
+  </div>
+</div>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const slides = carousel.children.length;
+  let index = 0;
+
+  function showSlide(i) {
+    index = (i + slides) % slides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => showSlide(index - 1));
+  document.getElementById('nextBtn').addEventListener('click', () => showSlide(index + 1));
+
+  setInterval(() => showSlide(index + 1), 5000);
+</script>
+
     
 
     <section class="credit-section">
@@ -77,6 +109,8 @@
         </div>
 
     </section>
+
+
 
     <section class="documents-section">
         
