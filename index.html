@@ -66,6 +66,101 @@
       </section>
     </main>
 
+     <!-- Catálogo de Productos -->
+  <section class="catalogo">
+    <h2 class="titulo-catalogo">Los más buscados</h2>
+
+    <div class="lista-productos">
+      <!-- Producto 1 -->
+      <div class="producto">
+        <img src="./assets/pruductos/TELMOV_MX_HONOR_200_LITE-CYAN-P--1-.webp" alt="Producto 1">
+        <h3>Honor 200 Lite</h3>
+        <p class="precio"> Desde $6,899</p>
+        <button class="boton-ver">Ver más</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="producto">
+        <img src="./assets/pruductos/CELU1011VERDE-256GB-300x300.jpg" alt="Producto 2">
+        <h3>Honor X6B Plus</h3>
+        <p class="precio">Desde $4,899</p>
+        <button class="boton-ver">Ver más</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="producto">
+        <img src="./assets/pruductos/71PJzpCObQL.jpg" alt="Producto 3">
+        <h3>Tecno Spark 30C</h3>
+        <p class="precio">Desde $4,599</p>
+        <button class="boton-ver">Ver más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal (Pop-up) -->
+<div class="modal" id="modalProducto">
+  <div class="modal-contenido">
+    <span class="modal-cerrar" id="cerrarModal">&times;</span>
+    <h3 id="modalTitulo">Detalles del Producto</h3>
+    <p class="enganche-destacado">Enganche desde $400 pesos*</p>
+    <ul id="modalDescripcion" class="descripcion-lista">
+  <!-- Aquí el JS agregará los <li> -->
+  </ul>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("modalProducto");
+  const cerrar = document.getElementById("cerrarModal");
+  const titulo = document.getElementById("modalTitulo");
+  const descripcion = document.getElementById("modalDescripcion");
+
+  document.querySelectorAll(".boton-ver").forEach((boton, index) => {
+    boton.addEventListener("click", () => {
+      // Limpia contenido anterior
+      descripcion.innerHTML = "";
+
+      if (index === 0) {
+        titulo.innerText = "Honor 200 Lite";
+        descripcion.innerHTML = `
+          <li>Pantalla 6.7'' </li>
+          <li>256 GB de almacenamiento</li>
+          <li>Cámara 108MP + 5MP + 2MP</li>
+          <li>Android 14</li>
+        `;
+      } else if (index === 1) {
+        titulo.innerText = "Honor X6B Plus";
+        descripcion.innerHTML = `
+          <li>Pantalla 6.5"</li>
+          <li>256 GB de almacenamiento</li>
+          <li>Cámara doble 50MP+2MP</li>
+          <li>Android 14</li>
+        `;
+      } else if (index === 2) {
+        titulo.innerText = "Tecno Spark 30C";
+        descripcion.innerHTML = `
+          <li>Pantalla HD+ 6.7"</li>
+          <li>256 GB + 8 GB RAM</li>
+          <li>Cámara 50MP</li>
+          <li>Android 14</li>
+        `;
+      }
+
+      modal.style.display = "block";
+    });
+  });
+
+  cerrar.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
     <div class="carousel-wrapper">
       <div class="carousel-title">Disfruta de promociones exclusivas</div>
 
@@ -89,6 +184,8 @@
       </div>
     </div>
 
+    
+
     <script>
       const carousel = document.getElementById("carousel");
       const slides = carousel.children.length;
@@ -108,6 +205,8 @@
 
       setInterval(() => showSlide(index + 1), 5000);
     </script>
+
+    
 
     <section class="credit-section">
       <div class="credit-section--title">
