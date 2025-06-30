@@ -94,6 +94,22 @@
         <p class="precio">Desde $4,599</p>
         <button class="boton-ver">Ver más</button>
       </div>
+
+      <!-- Producto 4 -->
+      <div class="producto">
+        <img src="./assets/pruductos/motog85.webp" alt="Producto 3">
+        <h3>Motorola G85</h3>
+        <p class="precio">Desde $6,899</p>
+        <button class="boton-ver">Ver más</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="producto">
+        <img src="./assets/pruductos/galaxya16.webp" alt="Producto 3">
+        <h3>Samsung Galaxy A16</h3>
+        <p class="precio">Desde $4,899</p>
+        <button class="boton-ver">Ver más</button>
+      </div>
     </div>
   </section>
 
@@ -141,6 +157,23 @@
         descripcion.innerHTML = `
           <li>Pantalla HD+ 6.7"</li>
           <li>256 GB + 8 GB RAM</li>
+          <li>Cámara 50MP</li>
+          <li>Android 14</li>
+        `;
+
+      } else if (index === 3) {
+        titulo.innerText = "Motorola G85";
+        descripcion.innerHTML = `
+          <li>Pantalla OLED 6.7"</li>
+          <li>256 GB + 8 GB RAM</li>
+          <li>Cámara 50MP</li>
+          <li>Android 14</li>
+        `;
+      } else if (index === 4) {
+        titulo.innerText = "Samsung Galaxy A16";
+        descripcion.innerHTML = `
+          <li>Pantalla HD+ 6.7"</li>
+          <li>128 GB + 4 GB RAM</li>
           <li>Cámara 50MP</li>
           <li>Android 14</li>
         `;
