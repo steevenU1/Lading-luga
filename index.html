@@ -251,7 +251,7 @@
           <a
             class="contact-button--link"
             href="#"
-            onclick="BrevoConversations('openChat', true)"
+             onclick="event.preventDefault(); abrirChatSucursal('Toluca')"
             >Estrena celular</a
           >
         </button>
@@ -360,13 +360,13 @@
             <img src="./assets/img/Suc-Ixtlahuaca-I.png" alt="" />
           </div>
           <p>Gustavo Baz Prada 41, El Panteón Centro, Ixtlahuaca 50740</p>
-          <button class="map-button">
+          <button class="map-button" >
             <a href="https://maps.app.goo.gl/1AAy2PESeQMsSz88A" target="_blank"
               >Ver el mapa</a
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#"  onclick="event.preventDefault(); abrirChatSucursal('Ixtlahuaca I')"
               >Contáctanos</a
             >
           </button>
@@ -383,7 +383,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('San Andrés')"
               >Contáctanos</a
             >
           </button>
@@ -398,7 +398,7 @@
             <a href="https://maps.app.goo.gl/gVcy5UHvhpSGz8Kw5">Ver el mapa</a>
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Temoaya')"
               >Contáctanos</a
             >
           </button>
@@ -415,7 +415,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtlahuaca II')"
               >Contáctanos</a
             >
           </button>
@@ -430,7 +430,7 @@
             <a href="https://maps.app.goo.gl/K1ALYNaJRjGcUQLW7">Ver el mapa</a>
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Calimaya')"
               >Contáctanos</a
             >
           </button>
@@ -447,7 +447,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtapan')"
               >Contáctanos</a
             >
           </button>
@@ -462,7 +462,7 @@
             <a href="#">Ver el mapa</a>
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtapan II')"
               >Contáctanos</a
             >
           </button>
@@ -482,7 +482,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Alpinismo')"
               >Contáctanos</a
             >
           </button>
@@ -499,7 +499,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Tonatico')"
               >Contáctanos</a
             >
           </button>
@@ -519,7 +519,7 @@
             >
           </button>
           <button class="dial-button">
-            <a href="#" onclick="BrevoConversations('openChat', true)"
+            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Xonacatlan')"
               >Contáctanos</a
             >
           </button>
@@ -733,6 +733,7 @@
       src="//js-na1.hs-scripts.com/50190447.js"
     ></script> -->
     <!-- End of HubSpot Embed Code -->
+    
 
     <script>
         (function(w,d,u){
@@ -740,6 +741,40 @@
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://cdn.bitrix24.mx/b34231453/crm/site_button/loader_1_qq146b.js');
     </script>
+
+    <script>
+  function abrirChatSucursal(nombreSucursal) {
+    const mensaje = `Hola Sucursal ${nombreSucursal}`;
+
+    // Copiar el mensaje al portapapeles
+    navigator.clipboard.writeText(mensaje).then(() => {
+      console.log(`Mensaje copiado: ${mensaje}`);
+    });
+
+    // Intentar encontrar el botón de Bitrix y simular clic
+    let intentos = 0;
+    const maxIntentos = 20;
+
+    const intentarAbrir = () => {
+      // Bitrix genera un botón con esta clase cuando el chat se carga
+      const botonChat = document.querySelector('.b24-widget-button-inner, .b24-widget-button-popup');
+
+      if (botonChat) {
+        botonChat.click(); // simular clic para abrir el chat
+        console.log('Chat abierto');
+      } else {
+        intentos++;
+        if (intentos < maxIntentos) {
+          setTimeout(intentarAbrir, 500); // reintenta cada 0.5 seg hasta 10 seg máx
+        } else {
+          alert("No se pudo abrir el chat. Intenta manualmente desde el botón flotante.");
+        }
+      }
+    };
+
+    intentarAbrir();
+  }
+</script>
      
   </body>
 </html>

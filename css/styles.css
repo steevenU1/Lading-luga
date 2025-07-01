@@ -333,7 +333,7 @@ nav{
     border: none;
     border-radius: 12px;
     box-shadow: 7px 6px 12px -3px rgba(0,0,0,0.75);
-    background-color: var(--secundary-color);
+    background-color: #020202;
     justify-self: center;
     margin-top: 20px;
 }
@@ -453,6 +453,12 @@ nav{
   transition: transform 0.3s ease;
 }
 
+.producto h3{
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
 .producto:hover {
   transform: translateY(-5px);
 }
@@ -465,11 +471,11 @@ nav{
 .precio {
   font-weight: bold;
   color: #007bff;
-}
+  font-size: 13px;}
 
 .boton-ver {
   margin-top: 10px;
-  background-color: #007bff;
+  background-color: #f11716;
   color: white;
   border: none;
   padding: 10px 15px;
