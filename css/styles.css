@@ -41,9 +41,13 @@ nav{
   hsl(11deg 100% 95%) 100%,
   hsl(0deg 0% 100%) 100%
 );
-    
-    
+
 }
+
+body{
+    background-color: #f5f5f5;
+}
+
 
 .nav-logo{
     width: 50%;
@@ -63,6 +67,8 @@ nav{
     width: 100%;
     height: auto;
     min-width: 320px;
+    background-color: white;
+    margin-top: 0;
 }
 
 .up-main--title{
@@ -73,6 +79,7 @@ nav{
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: white;
 }
 
 .up-main--title img{
@@ -118,10 +125,12 @@ nav{
 
 .credit-section{
     display: flex;
-    /* background-color: var(--secundary-color); */
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-color: #f5f5f5;
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
     width: 100%;
     height: auto;
+    padding-top: 80px;
+    margin: 40px auto;
 
 }
 
@@ -134,7 +143,7 @@ nav{
     height: auto;
     font-size: 3.5rem;
     font-weight: 400;
-    color: var(--bg-color);
+    color: black;
     text-align: center;
 }
 
@@ -181,8 +190,68 @@ nav{
     font-size: 2rem;
     font-weight: 400;
     color: var(--bg-color);
+    font-family: Circular, sans-serif;
 
 }
+
+/* .hero-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  gap: 40px;
+}
+
+.hero-contenido {
+  flex: 1 1 400px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-contenido h1 {
+  font-size: 40px;
+  color: #111;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-contenido p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.btn-estrena {
+  display: inline-block;
+  background-color: #d32f2f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-estrena:hover {
+  background-color: #b71c1c;
+}
+
+.hero-imagen {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.hero-imagen img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+} */
 
 .documents-section{
     width: 100%;
@@ -243,6 +312,269 @@ nav{
 .documents-card svg{
     position: absolute;
     top: -30px;
+}
+
+  .pasos-container {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 40px auto;
+  }
+
+  .pasos-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+@media (min-width: 1024px) {
+  .pasos-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas fijas en desktop */
+  }
+}
+
+  .pasos-intro {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 60px 40px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paso-box {
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paso-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.4);
+}
+
+.paso-numero {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  background-color: #df2424;
+  color: #fff;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.paso-box h3 {
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.paso-box p {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.galeria-sucursales-seccion {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.galeria-titulo {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+/* Galería horizontal con scroll */
+.galeria-sucursales {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;  /* 🟢 esto activa el snap */
+  padding: 10px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #d32f2f #e0e0e0;
+}
+
+.galeria-sucursales::-webkit-scrollbar {
+  height: 8px;
+}
+
+.galeria-sucursales::-webkit-scrollbar-thumb {
+  background-color: #d32f2f;
+  border-radius: 4px;
+}
+
+.galeria-sucursales::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Tarjetas de sucursal */
+.sucursal-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;  /* 🟢 esto hace que se centre */
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.sucursal-card:hover {
+  transform: translateY(-5px);
+}
+
+.sucursal-card h3 {
+  font-size: 20px;
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.sucursal-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.direccion {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.botones a,
+.botones button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-mapa {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+}
+
+.btn-mapa:hover {
+  background-color: #b71c1c;
+}
+
+.btn-contacto {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.btn-contacto:hover {
+  background-color: #333;
+}
+
+.sucursal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.sucursal-card:hover {
+  transform: translateY(-6px);
+}
+
+.sucursal-card h3 {
+  font-size: 20px;
+  color: #d32f2f;
+  margin-bottom: 35px;
+}
+
+.sucursal-card img {
+  width: 100%;
+  height: 160px; /* altura fija */
+  object-fit: cover; /* recorta y ajusta sin deformar */
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.sucursal-card .direccion {
+  font-size: 14px;
+  color: #333;
+  margin-top: 18px;
+  margin-bottom: 35px;
+}
+
+.sucursal-card .botones a,
+.sucursal-card .botones button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-mapa {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+}
+
+.btn-mapa:hover {
+  background-color: #b71c1c;
+}
+
+.btn-contacto {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.btn-contacto:hover {
+  background-color: #333;
 }
 
 
@@ -355,7 +687,8 @@ nav{
 .aliance-section{
     display: flex;
     flex-direction: column;
-
+    background-color: #f5f5f5;
+    margin: 40px auto;
 }
 
 
@@ -366,6 +699,7 @@ nav{
     font-weight: 600;
     margin-top: 20px;
     color: var(--tertiary-color);
+    background-color: ;
 
 }
 
@@ -391,6 +725,7 @@ nav{
     width: 100%;
     height: auto;
     justify-content: space-evenly;
+    background-color: ;
 }
 
 .providers-section{
@@ -402,7 +737,8 @@ nav{
     color: var(--tertiary-color);
     font-size: 2.5rem;
     font-weight: 400;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    background-color: #f5f5f5;
 }
 
 .providers-card-container{
@@ -426,13 +762,18 @@ nav{
 .catalogo {
   max-width: 100vw;
   margin: 60px auto;
-  padding: 0 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px 20px;
+  background-color: #f5f5f5; ;
 }
 
 .titulo-catalogo {
   text-align: center;
   font-size: 28px;
-  margin-bottom: 30px;
+  
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: #333;
 }
 
@@ -567,6 +908,8 @@ nav{
  .carousel-wrapper {
       text-align: center;
       padding-top: 30px;
+      background-color: #f5f5f5;
+      margin-bottom: 0;
     }
 
     .carousel-title {
@@ -581,6 +924,8 @@ nav{
       width: 100%;
       max-width: 800px;
       margin: 50px auto;
+      margin-bottom: 0;
+      padding-bottom: 20px;
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);

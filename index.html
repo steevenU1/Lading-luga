@@ -25,6 +25,9 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    
   </head>
 
   
@@ -261,7 +264,11 @@
       </div>
     </section>
 
-    <section class="documents-section">
+  
+
+
+
+    <!-- <section class="documents-section">
       <div class="documents-card--container">
         <div class="documents-card">
           <h3 class="main-card-title">
@@ -349,9 +356,143 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="store-main-section">
+  <section class="pasos-container" >
+  <div class="pasos-grid">
+    <div class="pasos-intro"  data-aos="fade-up">
+      Con nosotros <br />estrenar celular es muy fácil
+    </div>
+
+    <div class="paso-box" data-aos="fade-up" data-aos-delay="100">
+      <div class="paso-numero">1</div>
+      <h3>Ve a tu tienda más cercana</h3>
+      <p>Solo lleva tu número celular e identificación oficial vigente.</p>
+    </div>
+
+    <div class="paso-box" data-aos="fade-up" data-aos-delay="200">
+      <div class="paso-numero">2</div>
+      <h3>Elige entre las mejores marcas</h3>
+      <p>Selecciona el equipo que más te agrade y aplica para el financiamiento más cómodo.</p>
+    </div>
+
+    <div class="paso-box" data-aos="fade-up" data-aos-delay="300">
+      <div class="paso-numero">3</div>
+      <h3>Pagos semanales</h3>
+      <p>Haz tus pagos a tiempo en tiendas de conveniencia y accede a más beneficios.</p>
+    </div>
+  </div>
+</section>
+
+<section class="galeria-sucursales-seccion">
+  <h2 class="galeria-titulo">Selecciona tu sucursal más cercana</h2>
+
+  <div class="galeria-sucursales">
+    <div class="sucursal-card">
+      <h3>Ixtlahuaca II</h3>
+      <img src="./assets/img/Suc-Ixtlahuaca-II.png" alt="Sucursal Ixtlahuaca" />
+      <p class="direccion">Morelos 16, La Escoba, Ixtlahuaca 50740</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>Alpinismo</h3>
+      <img src="./assets/img/Suc Alpinismo.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Prof Maria del Refugio 435 Loc C, San Buenaventura, Toluca</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>Ixtlahuaca</h3>
+      <img src="./assets/img/Suc-Ixtlahuaca-I.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Gustavo Baz Prada 41, El Panteón Centro, Ixtlahuaca 50740</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div> 
+
+    <div class="sucursal-card">
+      <h3>San Andrés</h3>
+      <img src="./assets/img/Suc-San-Andres.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Miguel Hidalgo SN, San Andrés Cuxcontitlan, 50200</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div> 
+
+    <div class="sucursal-card">
+      <h3>Temoaya</h3>
+      <img src="./assets/img/Suc-temoaya.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Portal Madero 110, Centro, Temoaya México 50850</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div> 
+
+    <div class="sucursal-card">
+      <h3>Calimaya</h3>
+      <img src="./assets/img/Suc-Calimaya.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Benito Juarez 17, Centro, Calimaya México 52200</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>Ixtapan</h3>
+      <img src="./assets/img/Suc-ixtapan-I.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Iturbide 8, Barr Sta Catarina, Ixtapan de la Sal 51905</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>Tonatico</h3>
+      <img src="./assets/img/Suc-Tonatico.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Miguel hidalgo 28, Barr Santa María, Tonatico México 51950</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>Xonacatlan</h3>
+      <img src="./assets/img/Suc-Xonacatlan.png" alt="Sucursal Alpinismo" />
+      <p class="direccion">Francisco Sarabia 14, San Francisco, Xonacatlan 52060</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <div class="sucursal-card">
+      <h3>San Pablo</h3>
+      <img src="./assets/img/suc san pablo.jpg" alt="Sucursal Alpinismo" />
+      <p class="direccion">Ignacio Lopez Rayón122 Loc 1, San Pablo Autopan, Toluca 50290</p>
+      <div class="botones">
+        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      </div>
+    </div>
+
+    <!-- duplicar para más sucursales -->
+  </div>
+</section>
+
+    <!-- <section class="store-main-section">
       <h2>Selecciona tu sucursal más cercana</h2>
       <div class="store-card--container">
         <div class="store-card">
@@ -525,7 +666,7 @@
           </button>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="providers-section">
       <h1>Compatible con las mejores marcas</h1>
@@ -774,6 +915,14 @@
 
     intentarAbrir();
   }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,     // duración de la animación
+    once: true         // solo se anima una vez
+  });
 </script>
      
   </body>
