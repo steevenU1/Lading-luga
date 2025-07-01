@@ -535,10 +535,17 @@ body{
 .cerrar {
   position: absolute;
   top: 10px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
   color: #333;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #e60000; /* Rojo al pasar el mouse */
 }
 
 .sucursal-card {
