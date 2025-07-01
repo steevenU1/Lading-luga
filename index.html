@@ -393,7 +393,10 @@
       <img src="./assets/img/Suc-Ixtlahuaca-II.png" alt="Sucursal Ixtlahuaca" />
       <p class="direccion">Morelos 16, La Escoba, Ixtlahuaca 50740</p>
       <div class="botones">
-        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.3512656779144!2d-99.7622256!3d19.569446199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d265c9621e0b53%3A0x4288b328581d9f15!2sMorelos%2016%2C%20Ixtlahuaca%2C%2050740%20Ixtlahuaca%20de%20Ray%C3%B3n%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347731646!5m2!1ses!2smx')">
+  Ver el mapa
+</button>
+
         <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
       </div>
     </div>
@@ -403,7 +406,10 @@
       <img src="./assets/img/Suc Alpinismo.png" alt="Sucursal Alpinismo" />
       <p class="direccion">Prof Maria del Refugio 435 Loc C, San Buenaventura, Toluca</p>
       <div class="botones">
-        <a href="https://goo.gl/maps/..." class="btn-mapa" target="_blank">Ver el mapa</a>
+        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.4646868889713!2d-99.69224779999999!3d19.262148099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd88f7d09b074d%3A0xb8a2708aa7171581!2sProf.%C2%AA%20Mar%C3%ADa%20del%20Refugio%20Alejandro%20Tarrello%20435%2C%20Delegaci%C3%B3n%20San%20Buenaventura%2C%2050110%20San%20Buenaventura%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347349349!5m2!1ses!2smx')">
+  Ver el mapa
+</button>
+
         <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
       </div>
     </div>
@@ -923,6 +929,25 @@
     duration: 800,     // duración de la animación
     once: true         // solo se anima una vez
   });
+</script>
+
+<div id="modal-mapa" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarMapa()">&times;</span>
+    <iframe id="iframe-mapa" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+  function abrirMapa(url) {
+  document.getElementById('iframe-mapa').src = url;
+  document.getElementById('modal-mapa').style.display = 'flex';
+}
+
+function cerrarMapa() {
+  document.getElementById('modal-mapa').style.display = 'none';
+  document.getElementById('iframe-mapa').src = '';
+}
 </script>
      
   </body>
