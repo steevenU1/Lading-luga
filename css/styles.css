@@ -417,6 +417,8 @@ nav{
 .providers-card-container div{
     margin: 20px;
     justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 
