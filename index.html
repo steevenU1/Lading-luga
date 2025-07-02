@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- Brevo Conversations {literal} -->
-  <!-- <script>
-    (function(d, w, c) {
-        w.BrevoConversationsID = '683fd5f288854f4a1c0f5f57';
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        var s = d.createElement('script');
-        s.async = true;
-        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'BrevoConversations');
-</script> -->
-  <!-- /Brevo Conversations {/literal} -->
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,18 +17,6 @@
   </head>
 
   <body>
-    <!-- <nav>
-        <div class="nav-logo">
-            <img src="./assets/img/logo.png" alt="logo luga">
-        </div>
-        <div class="menu">
-            <ul>
-                <li>Sucursales</li>
-                <li>contacto</li>
-            </ul>
-        </div>
-    </nav> -->
-
     <main>
       <section class="up-main">
         <div class="up-main--title">
@@ -134,6 +107,8 @@
         </ul>
       </div>
     </div>
+
+    <!-- script para ver detalles de producto -->
 
     <script>
       const modal = document.getElementById("modalProducto");
@@ -226,6 +201,7 @@
       </div>
     </div>
 
+    <!-- Script para mover galeria de promos -->
     <script>
       const carousel = document.getElementById("carousel");
       const slides = carousel.children.length;
@@ -264,95 +240,7 @@
       </div>
     </section>
 
-    <!-- <section class="documents-section">
-      <div class="documents-card--container">
-        <div class="documents-card">
-          <h3 class="main-card-title">
-            Con nosotros estrenar <br />celular es muy fácil
-          </h3>
-        </div>
-
-        <div class="documents-card">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle-1-filled"
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#ffffff"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10zm.994 5.886c-.083 -.777 -1.008 -1.16 -1.617 -.67l-.084 .077l-2 2l-.083 .094a1 1 0 0 0 0 1.226l.083 .094l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l.293 -.293v5.586l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-8l-.006 -.114z"
-              stroke-width="0"
-              fill="#ffffff"
-            />
-          </svg>
-          <h3>Ve a tu tienda más cercana</h3>
-          <p>Sólo lleva:</p>
-          <p>Tu número celular</p>
-          <p>Identificación oficial vigente</p>
-        </div>
-
-        <div class="documents-card">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle-2-filled"
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#ffffff"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10zm1 5h-3l-.117 .007a1 1 0 0 0 0 1.986l.117 .007h3v2h-2l-.15 .005a2 2 0 0 0 -1.844 1.838l-.006 .157v2l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h3l.117 -.007a1 1 0 0 0 0 -1.986l-.117 -.007h-3v-2h2l.15 -.005a2 2 0 0 0 1.844 -1.838l.006 -.157v-2l-.005 -.15a2 2 0 0 0 -1.838 -1.844l-.157 -.006z"
-              stroke-width="0"
-              fill="#ffffff"
-            />
-          </svg>
-          <h3>Elige entre las mejores marcas</h3>
-          <p>
-            Selecciona el equipo que más te agrade y aplica para el
-            financiamiento más cómodo.
-          </p>
-        </div>
-
-        <div class="documents-card">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle-3-filled"
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#ffffff"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10zm1 5h-2l-.15 .005a2 2 0 0 0 -1.85 1.995a1 1 0 0 0 1.974 .23l.02 -.113l.006 -.117h2v2h-2l-.133 .007c-1.111 .12 -1.154 1.73 -.128 1.965l.128 .021l.133 .007h2v2h-2l-.007 -.117a1 1 0 0 0 -1.993 .117a2 2 0 0 0 1.85 1.995l.15 .005h2l.15 -.005a2 2 0 0 0 1.844 -1.838l.006 -.157v-2l-.005 -.15a1.988 1.988 0 0 0 -.17 -.667l-.075 -.152l-.019 -.032l.02 -.03a2.01 2.01 0 0 0 .242 -.795l.007 -.174v-2l-.005 -.15a2 2 0 0 0 -1.838 -1.844l-.157 -.006z"
-              stroke-width="0"
-              fill="#ffffff"
-            />
-          </svg>
-          <h3>Pagos Semanales</h3>
-          <p>
-            Haz tus pagos semanales a tiempo en cualquier tienda de conveniencia
-            y aplica para mejores beneficios.
-          </p>
-        </div>
-      </div>
-    </section> -->
+    <!-- Sección de pasos -->
 
     <section class="pasos-container">
       <div class="pasos-grid">
@@ -385,6 +273,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Sección galeria de sucursales -->
 
     <section class="galeria-sucursales-seccion">
       <h2 class="galeria-titulo">Selecciona tu sucursal más cercana</h2>
@@ -725,181 +615,7 @@
       </div>
     </section>
 
-    <!-- <section class="store-main-section">
-      <h2>Selecciona tu sucursal más cercana</h2>
-      <div class="store-card--container">
-        <div class="store-card">
-          <h3>Ixtlahuaca</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Ixtlahuaca-I.png" alt="" />
-          </div>
-          <p>Gustavo Baz Prada 41, El Panteón Centro, Ixtlahuaca 50740</p>
-          <button class="map-button" >
-            <a href="https://maps.app.goo.gl/1AAy2PESeQMsSz88A" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#"  onclick="event.preventDefault(); abrirChatSucursal('Ixtlahuaca I')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>San Andrés</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-San-Andres.png" alt="" />
-          </div>
-          <p>Miguel Hidalgo SN, San Andrés Cuxcontitlan, 50200</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/7YLQq7i4JsrfQwwb7" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('San Andrés')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Temoaya</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-temoaya.png" alt="" />
-          </div>
-          <p>Portal Madero 110, Centro, Temoaya México 50850</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/gVcy5UHvhpSGz8Kw5">Ver el mapa</a>
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Temoaya')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Ixtlahuaca II</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Ixtlahuaca-II.png" alt="" />
-          </div>
-          <p>Morelos 16, La Escoba, Ixtlahuaca 50740</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/NFYiAWTkqiSxjsPx6" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtlahuaca II')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Calimaya</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Calimaya.png" alt="" />
-          </div>
-          <p>Benito Juarez 17, Centro, Calimaya México 52200</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/K1ALYNaJRjGcUQLW7">Ver el mapa</a>
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Calimaya')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Ixtapan</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-ixtapan-I.png" alt="" />
-          </div>
-          <p>Iturbide 8, Barr Sta Catarina, Ixtapan de la Sal 51905</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/xp25GS8V28TVdiXD9" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtapan')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Ixtapan II</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Ixtapan-II.png" alt="" />
-          </div>
-          <p>Ignacio Zaragoza SN, Barr Sta Catarina, Ixtapan de la Sal 51900</p>
-          <button class="map-button">
-            <a href="#">Ver el mapa</a>
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Ixtapan II')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Alpinismo</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc Alpinismo.png" alt="" />
-          </div>
-          <p>
-            Prof Maria del Refugio Alejandre Tarello 435 Loc C, San
-            Buenaventura, Toluca
-          </p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/HqfHkpC5tiBRXbBB9" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Alpinismo')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Tonatico</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Tonatico.png" alt="" />
-          </div>
-          <p>Miguel hidalgo 28, Barr Santa María, Tonatico México 51950</p>
-          <button class="map-button">
-            <a href="https://maps.app.goo.gl/iZpXCh1mRZWMUhLM6" target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Tonatico')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-        <div class="store-card">
-          <h3>Xonacatlan</h3>
-          <div class="store-card--img">
-            <img src="./assets/img/Suc-Xonacatlan.png" alt="" />
-          </div>
-          <p>Francisco Sarabia 14, San Francisco, Xonacatlan 52060</p>
-          <button class="map-button">
-            <a
-              target="_blank"
-              href="https://maps.app.goo.gl/SmBQFgRTbT7FYhDv9"
-              target="_blank"
-              >Ver el mapa</a
-            >
-          </button>
-          <button class="dial-button">
-            <a href="#" onclick="event.preventDefault(); abrirChatSucursal('Xonacatlan')"
-              >Contáctanos</a
-            >
-          </button>
-        </div>
-      </div>
-    </section> -->
+    <!-- Sección de proveedores -->
 
     <section class="providers-section">
       <h1>Compatible con las mejores marcas</h1>
@@ -1102,6 +818,7 @@
       </div>
     </section>
 
+    <!-- Seccion de alianzas -->
     <section class="aliance-section">
       <div>
         <p>Nuestros aliados</p>
@@ -1123,15 +840,7 @@
       </section>
     </section>
 
-    <!-- Start of HubSpot Embed Code -->
-    <!-- <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js-na1.hs-scripts.com/50190447.js"
-    ></script> -->
-    <!-- End of HubSpot Embed Code -->
+    <!-- Script Bitrix24 -->
 
     <script>
       (function (w, d, u) {
@@ -1146,6 +855,8 @@
         "https://cdn.bitrix24.mx/b34231453/crm/site_button/loader_1_qq146b.js"
       );
     </script>
+
+    <!-- Script para abrir el chat de Bitrix24 con botones -->
 
     <script>
       function abrirChatSucursal(nombreSucursal) {
@@ -1185,6 +896,7 @@
       }
     </script>
 
+    <!-- Script para animaciones -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -1193,6 +905,7 @@
       });
     </script>
 
+    <!-- Modelado del pop up mapas -->
     <div id="modal-mapa" class="modal">
       <div class="modal-contenido">
         <span class="cerrar" onclick="cerrarMapa()">&times;</span>
@@ -1206,7 +919,7 @@
         ></iframe>
       </div>
     </div>
-
+    <!-- Script para ordenar las sucursales al cargar la página -->
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         const galeria = document.querySelector(".galeria-sucursales");
@@ -1227,7 +940,7 @@
         cards.forEach((card) => galeria.appendChild(card)); // Reorganiza el DOM
       });
     </script>
-
+    <!-- Script para abrir el mapa de Google Maps al hacer clic en una sucursal -->
     <script>
       function abrirMapa(url) {
         document.getElementById("iframe-mapa").src = url;
@@ -1240,11 +953,14 @@
       }
     </script>
 
+    <!-- Script para el scroll horizontal de la galería de sucursales -->
+
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         const galeria = document.querySelector(".galeria-sucursales");
         if (galeria) galeria.scrollLeft = 0;
       });
     </script>
+    
   </body>
 </html>
