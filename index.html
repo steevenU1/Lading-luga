@@ -25,12 +25,11 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
   </head>
-
-  
 
   <body>
     <!-- <nav>
@@ -71,133 +70,138 @@
       </section>
     </main>
 
-     <!-- Catálogo de Productos -->
-  <section class="catalogo">
-    <h2 class="titulo-catalogo">Los más buscados</h2>
+    <!-- Catálogo de Productos -->
+    <section class="catalogo">
+      <h2 class="titulo-catalogo">Los más buscados</h2>
 
-    <div class="lista-productos">
-      <!-- Producto 1 -->
-      <div class="producto">
-        <img src="./assets/pruductos/TELMOV_MX_HONOR_200_LITE-CYAN-P--1-.webp" alt="Producto 1">
-        <h3>Honor 200 Lite</h3>
-        <p class="precio"> Desde $320 Semanal</p>
-        <button class="boton-ver">Ver más</button>
+      <div class="lista-productos">
+        <!-- Producto 1 -->
+        <div class="producto">
+          <img
+            src="./assets/pruductos/TELMOV_MX_HONOR_200_LITE-CYAN-P--1-.webp"
+            alt="Producto 1"
+          />
+          <h3>Honor 200 Lite</h3>
+          <p class="precio">Desde $320 Semanal</p>
+          <button class="boton-ver">Ver más</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="producto">
+          <img
+            src="./assets/pruductos/CELU1011VERDE-256GB-300x300.jpg"
+            alt="Producto 2"
+          />
+          <h3>Honor X6B Plus</h3>
+          <p class="precio">Desde $264 Semanal</p>
+          <button class="boton-ver">Ver más</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="producto">
+          <img src="./assets/pruductos/71PJzpCObQL.jpg" alt="Producto 3" />
+          <h3>Tecno Spark 30C</h3>
+          <p class="precio">Desde $150 Semanal</p>
+          <button class="boton-ver">Ver más</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="producto">
+          <img src="./assets/pruductos/motog85.webp" alt="Producto 3" />
+          <h3>Motorola G85</h3>
+          <p class="precio">Desde $234 Semanal</p>
+          <button class="boton-ver">Ver más</button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="producto">
+          <img src="./assets/pruductos/galaxya16.webp" alt="Producto 3" />
+          <h3>Samsung Galaxy A16</h3>
+          <p class="precio">Desde $180 Semanal</p>
+          <button class="boton-ver">Ver más</button>
+        </div>
       </div>
+    </section>
 
-      <!-- Producto 2 -->
-      <div class="producto">
-        <img src="./assets/pruductos/CELU1011VERDE-256GB-300x300.jpg" alt="Producto 2">
-        <h3>Honor X6B Plus</h3>
-        <p class="precio">Desde $264 Semanal</p>
-        <button class="boton-ver">Ver más</button>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="producto">
-        <img src="./assets/pruductos/71PJzpCObQL.jpg" alt="Producto 3">
-        <h3>Tecno Spark 30C</h3>
-        <p class="precio">Desde $150 Semanal</p>
-        <button class="boton-ver">Ver más</button>
-      </div>
-
-      <!-- Producto 4 -->
-      <div class="producto">
-        <img src="./assets/pruductos/motog85.webp" alt="Producto 3">
-        <h3>Motorola G85</h3>
-        <p class="precio">Desde $234 Semanal</p>
-        <button class="boton-ver">Ver más</button>
-      </div>
-
-      <!-- Producto 5 -->
-      <div class="producto">
-        <img src="./assets/pruductos/galaxya16.webp" alt="Producto 3">
-        <h3>Samsung Galaxy A16</h3>
-        <p class="precio">Desde $180 Semanal</p>
-        <button class="boton-ver">Ver más</button>
+    <!-- Modal (Pop-up) -->
+    <div class="modal" id="modalProducto">
+      <div class="modal-contenido">
+        <span class="modal-cerrar" id="cerrarModal">&times;</span>
+        <h3 id="modalTitulo">Detalles del Producto</h3>
+        <p class="enganche-destacado">Enganche desde $400 pesos*</p>
+        <ul id="modalDescripcion" class="descripcion-lista">
+          <!-- Aquí el JS agregará los <li> -->
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Modal (Pop-up) -->
-<div class="modal" id="modalProducto">
-  <div class="modal-contenido">
-    <span class="modal-cerrar" id="cerrarModal">&times;</span>
-    <h3 id="modalTitulo">Detalles del Producto</h3>
-    <p class="enganche-destacado">Enganche desde $400 pesos*</p>
-    <ul id="modalDescripcion" class="descripcion-lista">
-  <!-- Aquí el JS agregará los <li> -->
-  </ul>
-  </div>
-</div>
+    <script>
+      const modal = document.getElementById("modalProducto");
+      const cerrar = document.getElementById("cerrarModal");
+      const titulo = document.getElementById("modalTitulo");
+      const descripcion = document.getElementById("modalDescripcion");
 
-<script>
-  const modal = document.getElementById("modalProducto");
-  const cerrar = document.getElementById("cerrarModal");
-  const titulo = document.getElementById("modalTitulo");
-  const descripcion = document.getElementById("modalDescripcion");
+      document.querySelectorAll(".boton-ver").forEach((boton, index) => {
+        boton.addEventListener("click", () => {
+          // Limpia contenido anterior
+          descripcion.innerHTML = "";
 
-  document.querySelectorAll(".boton-ver").forEach((boton, index) => {
-    boton.addEventListener("click", () => {
-      // Limpia contenido anterior
-      descripcion.innerHTML = "";
-
-      if (index === 0) {
-        titulo.innerText = "Honor 200 Lite";
-        descripcion.innerHTML = `
+          if (index === 0) {
+            titulo.innerText = "Honor 200 Lite";
+            descripcion.innerHTML = `
           <li>Pantalla 6.7'' </li>
           <li>256 GB de almacenamiento</li>
           <li>Cámara 108MP + 5MP + 2MP</li>
           <li>Android 14</li>
         `;
-      } else if (index === 1) {
-        titulo.innerText = "Honor X6B Plus";
-        descripcion.innerHTML = `
+          } else if (index === 1) {
+            titulo.innerText = "Honor X6B Plus";
+            descripcion.innerHTML = `
           <li>Pantalla 6.5"</li>
           <li>256 GB de almacenamiento</li>
           <li>Cámara doble 50MP+2MP</li>
           <li>Android 14</li>
         `;
-      } else if (index === 2) {
-        titulo.innerText = "Tecno Spark 30C";
-        descripcion.innerHTML = `
+          } else if (index === 2) {
+            titulo.innerText = "Tecno Spark 30C";
+            descripcion.innerHTML = `
           <li>Pantalla HD+ 6.7"</li>
           <li>256 GB + 8 GB RAM</li>
           <li>Cámara 50MP</li>
           <li>Android 14</li>
         `;
-
-      } else if (index === 3) {
-        titulo.innerText = "Motorola G85";
-        descripcion.innerHTML = `
+          } else if (index === 3) {
+            titulo.innerText = "Motorola G85";
+            descripcion.innerHTML = `
           <li>Pantalla OLED 6.7"</li>
           <li>256 GB + 8 GB RAM</li>
           <li>Cámara 50MP</li>
           <li>Android 14</li>
         `;
-      } else if (index === 4) {
-        titulo.innerText = "Samsung Galaxy A16";
-        descripcion.innerHTML = `
+          } else if (index === 4) {
+            titulo.innerText = "Samsung Galaxy A16";
+            descripcion.innerHTML = `
           <li>Pantalla HD+ 6.7"</li>
           <li>128 GB + 4 GB RAM</li>
           <li>Cámara 50MP</li>
           <li>Android 14</li>
         `;
-      }
+          }
 
-      modal.style.display = "block";
-    });
-  });
+          modal.style.display = "block";
+        });
+      });
 
-  cerrar.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+      cerrar.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-</script>
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
 
     <div class="carousel-wrapper">
       <div class="carousel-title">Disfruta de promociones exclusivas</div>
@@ -222,8 +226,6 @@
       </div>
     </div>
 
-    
-
     <script>
       const carousel = document.getElementById("carousel");
       const slides = carousel.children.length;
@@ -244,8 +246,6 @@
       setInterval(() => showSlide(index + 1), 5000);
     </script>
 
-    
-
     <section class="credit-section">
       <div class="credit-section--title">
         <h2>¡Estrena hoy!</h2>
@@ -254,7 +254,7 @@
           <a
             class="contact-button--link"
             href="#"
-             onclick="event.preventDefault(); abrirChatSucursal('Toluca')"
+            onclick="event.preventDefault(); abrirChatSucursal('Toluca')"
             >Estrena celular</a
           >
         </button>
@@ -263,10 +263,6 @@
         <img src="./assets/img/Chico mostrando su cel.png" alt="" />
       </div>
     </section>
-
-  
-
-
 
     <!-- <section class="documents-section">
       <div class="documents-card--container">
@@ -358,169 +354,379 @@
       </div>
     </section> -->
 
-  <section class="pasos-container" >
-  <div class="pasos-grid">
-    <div class="pasos-intro"  data-aos="fade-up">
-      Con nosotros <br />estrenar celular es muy fácil
-    </div>
+    <section class="pasos-container">
+      <div class="pasos-grid">
+        <div class="pasos-intro" data-aos="fade-up">
+          Con nosotros <br />estrenar celular es muy fácil
+        </div>
 
-    <div class="paso-box" data-aos="fade-up" data-aos-delay="100">
-      <div class="paso-numero">1</div>
-      <h3>Ve a tu tienda más cercana</h3>
-      <p>Solo lleva tu número celular e identificación oficial vigente.</p>
-    </div>
+        <div class="paso-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="paso-numero">1</div>
+          <h3>Ve a tu tienda más cercana</h3>
+          <p>Solo lleva tu número celular e identificación oficial vigente.</p>
+        </div>
 
-    <div class="paso-box" data-aos="fade-up" data-aos-delay="200">
-      <div class="paso-numero">2</div>
-      <h3>Elige entre las mejores marcas</h3>
-      <p>Selecciona el equipo que más te agrade y aplica para el financiamiento más cómodo.</p>
-    </div>
+        <div class="paso-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="paso-numero">2</div>
+          <h3>Elige entre las mejores marcas</h3>
+          <p>
+            Selecciona el equipo que más te agrade y aplica para el
+            financiamiento más cómodo.
+          </p>
+        </div>
 
-    <div class="paso-box" data-aos="fade-up" data-aos-delay="300">
-      <div class="paso-numero">3</div>
-      <h3>Pagos semanales</h3>
-      <p>Haz tus pagos a tiempo en tiendas de conveniencia y accede a más beneficios.</p>
-    </div>
-  </div>
-</section>
-
-<section class="galeria-sucursales-seccion">
-  <h2 class="galeria-titulo">Selecciona tu sucursal más cercana</h2>
-
-  <div class="galeria-sucursales">
-    <div class="sucursal-card">
-      <h3>Ixtlahuaca II</h3>
-      <img src="./assets/img/Suc-Ixtlahuaca-II.png" alt="Sucursal Ixtlahuaca" />
-      <p class="direccion">Morelos 16, La Escoba, Ixtlahuaca 50740</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.3512656779144!2d-99.7622256!3d19.569446199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d265c9621e0b53%3A0x4288b328581d9f15!2sMorelos%2016%2C%20Ixtlahuaca%2C%2050740%20Ixtlahuaca%20de%20Ray%C3%B3n%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347731646!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+        <div class="paso-box" data-aos="fade-up" data-aos-delay="300">
+          <div class="paso-numero">3</div>
+          <h3>Pagos semanales</h3>
+          <p>
+            Haz tus pagos a tiempo en tiendas de conveniencia y accede a más
+            beneficios.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="sucursal-card">
-      <h3>Alpinismo</h3>
-      <img src="./assets/img/Suc Alpinismo.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Prof Maria del Refugio 435 Loc C, San Buenaventura, Toluca</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.4646868889713!2d-99.69224779999999!3d19.262148099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd88f7d09b074d%3A0xb8a2708aa7171581!2sProf.%C2%AA%20Mar%C3%ADa%20del%20Refugio%20Alejandro%20Tarrello%20435%2C%20Delegaci%C3%B3n%20San%20Buenaventura%2C%2050110%20San%20Buenaventura%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347349349!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
+    <section class="galeria-sucursales-seccion">
+      <h2 class="galeria-titulo">Selecciona tu sucursal más cercana</h2>
 
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
+      <div class="galeria-sucursales">
+        <div class="sucursal-card">
+          <h3>Ixtlahuaca II</h3>
+          <img
+            src="./assets/img/Suc-Ixtlahuaca-II.png"
+            alt="Sucursal Ixtlahuaca"
+          />
+          <p class="direccion">Morelos 16, La Escoba, Ixtlahuaca 50740</p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.3512656779144!2d-99.7622256!3d19.569446199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d265c9621e0b53%3A0x4288b328581d9f15!2sMorelos%2016%2C%20Ixtlahuaca%2C%2050740%20Ixtlahuaca%20de%20Ray%C3%B3n%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347731646!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Alpinismo</h3>
+          <img src="./assets/img/Suc Alpinismo.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Prof Maria del Refugio 435 Loc C, San Buenaventura, Toluca
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.4646868889713!2d-99.69224779999999!3d19.262148099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd88f7d09b074d%3A0xb8a2708aa7171581!2sProf.%C2%AA%20Mar%C3%ADa%20del%20Refugio%20Alejandro%20Tarrello%20435%2C%20Delegaci%C3%B3n%20San%20Buenaventura%2C%2050110%20San%20Buenaventura%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751347349349!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Ixtlahuaca</h3>
+          <img
+            src="./assets/img/Suc-Ixtlahuaca-I.png"
+            alt="Sucursal Alpinismo"
+          />
+          <p class="direccion">
+            Gustavo Baz Prada 41, El Panteón Centro, Ixtlahuaca 50740
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15037.737144311604!2d-99.7825991!3d19.5658865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2654b3d6c6de7%3A0x5aa1cebfdd717332!2sTienda%20Bait%20Ixtlahuaca!5e0!3m2!1ses!2smx!4v1751347819773!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>San Andrés</h3>
+          <img src="./assets/img/Suc-San-Andres.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Miguel Hidalgo SN, San Andrés Cuxcontitlan, 50200
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.31666952765!2d-99.62826919999999!3d19.355436299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2750ff45d0e87%3A0x3ef931be6411740d!2sTienda%20Bait%20San%20Andres!5e0!3m2!1ses!2smx!4v1751347903455!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Temoaya</h3>
+          <img src="./assets/img/Suc-temoaya.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Portal Madero 110, Centro, Temoaya México 50850
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.661305498238!2d-99.5936694!3d19.4701643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d273e4d3189937%3A0x4b623fdd96078ccb!2sTienda%20Bait%20Temoaya!5e0!3m2!1ses!2smx!4v1751348180156!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Calimaya</h3>
+          <img src="./assets/img/Suc-Calimaya.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Benito Juarez 17, Centro, Calimaya México 52200
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3768.8135090947567!2d-99.6178889!3d19.159638899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDA5JzM0LjciTiA5OcKwMzcnMDQuNCJX!5e0!3m2!1ses!2smx!4v1751348278284!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Ixtapan</h3>
+          <img src="./assets/img/Suc-ixtapan-I.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Iturbide 8, Barr Sta Catarina, Ixtapan de la Sal 51905
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15104.031468908684!2d-99.67544361766578!3d18.84231800978156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdbc7f0dd4aed1%3A0x74b39471996dc311!2sAgust%C3%ADn%20de%20Iturbide%20Ote.%208%2C%20Ixtapan%20de%20la%20Sal%2C%2051905%20Ixtapan%20de%20la%20Sal%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348393605!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Tonatico</h3>
+          <img src="./assets/img/Suc-Tonatico.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Miguel hidalgo 28, Barr Santa María, Tonatico México 51950
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.8651959264103!2d-99.66956200000001!3d18.80416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdbbaf97e121b7%3A0xa2495d7efb76dad1!2sAv%20Miguel%20Hidalgo%2028%2C%20Tonatico%2C%2051950%20Tonatico%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348465941!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Xonacatlan</h3>
+          <img src="./assets/img/Suc-Xonacatlan.png" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Francisco Sarabia 14, San Francisco, Xonacatlan 52060
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1881.607790786445!2d-99.5303878!3d19.4030892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20b5b6b15b517%3A0x473f17bc039822cd!2sSAN%20FRANCISCO%2C%20Independencia%206%2C%20Xonacatlan%20de%20Vicencio%2C%2052060%20Xonacatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348519236!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>San Pablo</h3>
+          <img src="./assets/img/suc san pablo.jpg" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Ignacio Lopez Rayón122 Loc 1, San Pablo Autopan, Toluca 50290
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3764.274809074125!2d-99.65724999999999!3d19.357250000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDIxJzI2LjEiTiA5OcKwMzknMjYuMSJX!5e0!3m2!1ses!2smx!4v1751348573283!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Atlacomulco</h3>
+          <img
+            src="./assets/img/suc Atlacomulco.png"
+            alt="Sucursal Alpinismo"
+          />
+          <p class="direccion">
+            Mario Colin Sanchez 355, La Asuncion, Atlacomulco 50450
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15016.07506081154!2d-99.88199179502207!3d19.79680170993669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d258950688096b%3A0xeaa6d52a63a2e62f!2sMario%20Colin%20S%C3%A1nchez%20355%2C%20Cuatro%20Milpas%2C%2050455%20Atlacomulco%20de%20Fabela%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751412787106!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Coatepec</h3>
+          <img src="./assets/img/suc coatepec.jpg" alt="Sucursal Alpinismo" />
+          <p class="direccion">
+            Sebastian Lerdo de Tejada esq Vicente Gro, Barrio 1a San Miguel,
+            Coatepec 50400
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15096.654887608445!2d-99.76935290557829!3d18.92414598271652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cda27e7497ea75%3A0x44e366b467b7df12!2sSebasti%C3%A1n%20Lerdo%20de%20Tejada%20%26%20Vicente%20Guerrero%2C%20Manzana%20031%2C%2051700%20Coatepec%20Harinas%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751413680205!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Villa Guerrero</h3>
+          <img
+            src="./assets/img/sucVillaGuerrero.jpg"
+            alt="Sucursal Alpinismo"
+          />
+          <p class="direccion">Ocampo Ote 2, Centro, Villa Guerrero 51760</p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.319736726705!2d-99.6416799!3d18.961481600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd967317b8af43%3A0x39107963dd3188d2!2sCalle%20Ocampo%20Pte.%202%2C%20Villa%20Guerrero%2C%2051760%20Villa%20Guerrero%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751413930975!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <div class="sucursal-card">
+          <h3>Valle de Bravo</h3>
+          <img
+            src="./assets/img/sucValledeBravo.jpg"
+            alt="Sucursal Alpinismo"
+          />
+          <p class="direccion">
+            Joaquin Arcadio Pagaza 205, Centro, Valle de Bravo 51200
+          </p>
+          <div class="botones">
+            <button
+              class="btn-mapa"
+              onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d942.0160481807537!2d-100.13051833042!3d19.192398398877266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd6380a05f8f8f%3A0xdc037828053bba6a!2sC.%20de%20Joaqu%C3%ADn%20Arcadio%20Pagaza%20206%2C%20Sta%20Maria%20Ahuacatlan%2C%2051200%20Valle%20de%20Bravo%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751414247643!5m2!1ses!2smx')"
+            >
+              Ver el mapa
+            </button>
+
+            <button
+              class="btn-contacto"
+              onclick="abrirChatSucursal('Ixtlahuaca II')"
+            >
+              Contáctanos
+            </button>
+          </div>
+        </div>
+
+        <!-- duplicar para más sucursales -->
       </div>
-    </div>
-
-    <div class="sucursal-card">
-      <h3>Ixtlahuaca</h3>
-      <img src="./assets/img/Suc-Ixtlahuaca-I.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Gustavo Baz Prada 41, El Panteón Centro, Ixtlahuaca 50740</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15037.737144311604!2d-99.7825991!3d19.5658865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2654b3d6c6de7%3A0x5aa1cebfdd717332!2sTienda%20Bait%20Ixtlahuaca!5e0!3m2!1ses!2smx!4v1751347819773!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div> 
-
-    <div class="sucursal-card">
-      <h3>San Andrés</h3>
-      <img src="./assets/img/Suc-San-Andres.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Miguel Hidalgo SN, San Andrés Cuxcontitlan, 50200</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.31666952765!2d-99.62826919999999!3d19.355436299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2750ff45d0e87%3A0x3ef931be6411740d!2sTienda%20Bait%20San%20Andres!5e0!3m2!1ses!2smx!4v1751347903455!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div> 
-
-    <div class="sucursal-card">
-      <h3>Temoaya</h3>
-      <img src="./assets/img/Suc-temoaya.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Portal Madero 110, Centro, Temoaya México 50850</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.661305498238!2d-99.5936694!3d19.4701643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d273e4d3189937%3A0x4b623fdd96078ccb!2sTienda%20Bait%20Temoaya!5e0!3m2!1ses!2smx!4v1751348180156!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div> 
-
-    <div class="sucursal-card">
-      <h3>Calimaya</h3>
-      <img src="./assets/img/Suc-Calimaya.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Benito Juarez 17, Centro, Calimaya México 52200</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3768.8135090947567!2d-99.6178889!3d19.159638899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDA5JzM0LjciTiA5OcKwMzcnMDQuNCJX!5e0!3m2!1ses!2smx!4v1751348278284!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div>
-
-    <div class="sucursal-card">
-      <h3>Ixtapan</h3>
-      <img src="./assets/img/Suc-ixtapan-I.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Iturbide 8, Barr Sta Catarina, Ixtapan de la Sal 51905</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15104.031468908684!2d-99.67544361766578!3d18.84231800978156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdbc7f0dd4aed1%3A0x74b39471996dc311!2sAgust%C3%ADn%20de%20Iturbide%20Ote.%208%2C%20Ixtapan%20de%20la%20Sal%2C%2051905%20Ixtapan%20de%20la%20Sal%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348393605!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div>
-
-    <div class="sucursal-card">
-      <h3>Tonatico</h3>
-      <img src="./assets/img/Suc-Tonatico.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Miguel hidalgo 28, Barr Santa María, Tonatico México 51950</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.8651959264103!2d-99.66956200000001!3d18.80416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdbbaf97e121b7%3A0xa2495d7efb76dad1!2sAv%20Miguel%20Hidalgo%2028%2C%20Tonatico%2C%2051950%20Tonatico%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348465941!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div>
-
-    <div class="sucursal-card">
-      <h3>Xonacatlan</h3>
-      <img src="./assets/img/Suc-Xonacatlan.png" alt="Sucursal Alpinismo" />
-      <p class="direccion">Francisco Sarabia 14, San Francisco, Xonacatlan 52060</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1881.607790786445!2d-99.5303878!3d19.4030892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20b5b6b15b517%3A0x473f17bc039822cd!2sSAN%20FRANCISCO%2C%20Independencia%206%2C%20Xonacatlan%20de%20Vicencio%2C%2052060%20Xonacatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1751348519236!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div>
-
-    <div class="sucursal-card">
-      <h3>San Pablo</h3>
-      <img src="./assets/img/suc san pablo.jpg" alt="Sucursal Alpinismo" />
-      <p class="direccion">Ignacio Lopez Rayón122 Loc 1, San Pablo Autopan, Toluca 50290</p>
-      <div class="botones">
-        <button class="btn-mapa" onclick="abrirMapa('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3764.274809074125!2d-99.65724999999999!3d19.357250000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDIxJzI2LjEiTiA5OcKwMzknMjYuMSJX!5e0!3m2!1ses!2smx!4v1751348573283!5m2!1ses!2smx')">
-  Ver el mapa
-</button>
-
-        <button class="btn-contacto" onclick="abrirChatSucursal('Ixtlahuaca II')">Contáctanos</button>
-      </div>
-    </div>
-
-    <!-- duplicar para más sucursales -->
-  </div>
-</section>
+    </section>
 
     <!-- <section class="store-main-section">
       <h2>Selecciona tu sucursal más cercana</h2>
@@ -705,9 +911,34 @@
       <div class="providers-card-container">
         <div>
           <!-- Logo Redmi en mayúsculas -->
-          <svg xmlns="http://www.w3.org/2000/svg" height="80" width="150" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" viewBox="-52.80075 -41.0145 457.6065 246.087"><path d="M14 98H0V2h36c15.991.02 27.924 9.568 28 26 .062 13.499-7.544 22.718-18 27l21 43H50L31 56H14zm18-85H14v32h19c6.945.085 16.896-4.208 17-16 .1-11.368-8.854-15.994-18-16zm104 56V57c.266-14.435-8.802-29.968-30-30-23.873-.037-33.128 19.361-33 36 .198 25.847 13.844 38.055 36 38 11.323-.028 18.333-3.349 25-7V83c-7.697 2.827-13.507 6.094-25 6-15.378-.126-20.943-11.926-21-20zM88 59h35v-3c-.103-8.569-5.964-18.035-17-18-12.641.04-18.124 11.505-18 18zm121 36V0l-14 4v26c-3.998-2.217-8.774-2.964-14-3-25.417-.178-33.159 18.474-33 37 .206 23.966 13.934 37.355 36 37 9.536-.153 16.876-1.923 25-6zm-14-53v44c-3.483 2.083-7.074 2.644-11 2.59-19.394-.269-20.962-17.383-21-24.59-.074-14.052 4.753-25.205 19-25 5.549.08 8.749.814 13 3z"/><path d="M224 35v63h14V43c2.83-2.403 6.16-3.99 12-4 8.12-.013 14.9 4.45 15 14v45h15V45c3.31-3.598 6.61-5.986 14-6 9.81-.018 12.96 5.983 13 14v45h14V49c-.24-17.729-14.61-22.041-24-22-13.3.058-17.66 3.74-24 8-5.26-5.019-10.17-8.056-22-8-14.04.066-19.75 3.47-27 8z" fill="#0d0d0d"/><path d="M335 31h15v67h-15z"/><circle r="9" cy="475" cx="1126" transform="translate(-846.056 -490.889) scale(1.05556)"/><path d="M104.966 136.807l2.458-.002 8.395 16.645 7.266-16.597 2.398.006-10.583 24.123c-.447 1.124-1.853 3.049-4.979 3.076-1.8.015-3.814-.744-4.701-2.078l1.822-1.256c.266.474 1.476 1.124 2.807 1.131 1.381.007 2.486-.567 3.005-1.666l1.791-4.104zm-23.25-8.804h2.144l.021 11.742c2.188-2.658 5.231-3.615 8.343-3.657 6.625-.088 9.909 4.996 9.919 10.534.011 6.332-4.884 10.303-9.687 10.376-3.732.057-6.726-1.52-8.562-3.78l.011 3.778-2.193.013zm2.117 18.613c.018-4.692 2.773-8.242 8.421-8.359 4.097-.086 7.559 2.543 7.631 8.278.067 5.328-4.309 8.302-7.631 8.259-5.598-.073-8.437-3.959-8.421-8.178zm57.542-17.602l2.791-.029 9.447 11.843 9.428-11.832 2.819-.009-10.816 13.624 11.448 14.391-2.809.002-10.09-12.613-10.053 12.612-2.812-.004 11.478-14.406zm30.29 7.982h2.188v20.007h-2.188zm0-8.011h2.188v2.94h-2.188zm11.245 10.879l-1.221-1.819c1.584-.982 3.176-1.97 7.152-1.869 3.9.099 8.35 2.978 8.323 6.818v14.015l-2.192.003-.001-2.371c-2.087 1.955-4.561 2.796-7.301 2.866-4.418.114-7.807-2.303-7.8-6.305.005-3.098 1.33-7.117 8.647-7.201 3.064-.036 6.457.858 6.457.858l.001-1.654c.054-2.155-2.469-4.826-6.581-4.829-2.619-.001-3.967.489-5.484 1.488zm12.066 7.288v4.064c-1.964 2.876-4.517 4.102-7.53 4.101-3.408 0-5.317-1.396-5.39-4.228-.082-3.214 2.186-4.863 6.624-4.899 2.1-.017 4.199.362 6.296.962zm18.403-10.997c5.709 0 10.339 4.865 10.339 10.857 0 5.992-4.63 10.857-10.339 10.857-5.704 0-10.335-4.865-10.335-10.857 0-5.992 4.631-10.857 10.335-10.857zm0 2.212c4.499 0 8.149 3.874 8.149 8.645 0 4.771-3.65 8.645-8.149 8.645-4.499 0-8.152-3.874-8.152-8.645 0-4.771 3.653-8.645 8.152-8.645zm16.229-1.389v19.993h2.16v-11.943c.03-2.387 1.76-6.7 6.77-6.699 2.63.001 5.54 1.323 5.67 4.182v14.46h2.2v-13.822c.02-1.896 2.46-4.548 6.38-4.611 3.52-.057 5.83 2.035 5.88 5.351v13.114h2.16v-13.007c.05-4.584-3.09-7.742-8.11-7.691-2.52.025-5 .759-7.09 3.296-1.44-2.016-3.58-3.508-7.27-3.473-2.24.021-4.51.766-6.59 2.977v-2.127zm38.492.018h2.187v20.007H268.1zm0-8.011h2.187v2.94H268.1z"/></svg>
-
-
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="80"
+            width="150"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="1.414"
+            viewBox="-52.80075 -41.0145 457.6065 246.087"
+          >
+            <path
+              d="M14 98H0V2h36c15.991.02 27.924 9.568 28 26 .062 13.499-7.544 22.718-18 27l21 43H50L31 56H14zm18-85H14v32h19c6.945.085 16.896-4.208 17-16 .1-11.368-8.854-15.994-18-16zm104 56V57c.266-14.435-8.802-29.968-30-30-23.873-.037-33.128 19.361-33 36 .198 25.847 13.844 38.055 36 38 11.323-.028 18.333-3.349 25-7V83c-7.697 2.827-13.507 6.094-25 6-15.378-.126-20.943-11.926-21-20zM88 59h35v-3c-.103-8.569-5.964-18.035-17-18-12.641.04-18.124 11.505-18 18zm121 36V0l-14 4v26c-3.998-2.217-8.774-2.964-14-3-25.417-.178-33.159 18.474-33 37 .206 23.966 13.934 37.355 36 37 9.536-.153 16.876-1.923 25-6zm-14-53v44c-3.483 2.083-7.074 2.644-11 2.59-19.394-.269-20.962-17.383-21-24.59-.074-14.052 4.753-25.205 19-25 5.549.08 8.749.814 13 3z"
+            />
+            <path
+              d="M224 35v63h14V43c2.83-2.403 6.16-3.99 12-4 8.12-.013 14.9 4.45 15 14v45h15V45c3.31-3.598 6.61-5.986 14-6 9.81-.018 12.96 5.983 13 14v45h14V49c-.24-17.729-14.61-22.041-24-22-13.3.058-17.66 3.74-24 8-5.26-5.019-10.17-8.056-22-8-14.04.066-19.75 3.47-27 8z"
+              fill="#0d0d0d"
+            />
+            <path d="M335 31h15v67h-15z" />
+            <circle
+              r="9"
+              cy="475"
+              cx="1126"
+              transform="translate(-846.056 -490.889) scale(1.05556)"
+            />
+            <path
+              d="M104.966 136.807l2.458-.002 8.395 16.645 7.266-16.597 2.398.006-10.583 24.123c-.447 1.124-1.853 3.049-4.979 3.076-1.8.015-3.814-.744-4.701-2.078l1.822-1.256c.266.474 1.476 1.124 2.807 1.131 1.381.007 2.486-.567 3.005-1.666l1.791-4.104zm-23.25-8.804h2.144l.021 11.742c2.188-2.658 5.231-3.615 8.343-3.657 6.625-.088 9.909 4.996 9.919 10.534.011 6.332-4.884 10.303-9.687 10.376-3.732.057-6.726-1.52-8.562-3.78l.011 3.778-2.193.013zm2.117 18.613c.018-4.692 2.773-8.242 8.421-8.359 4.097-.086 7.559 2.543 7.631 8.278.067 5.328-4.309 8.302-7.631 8.259-5.598-.073-8.437-3.959-8.421-8.178zm57.542-17.602l2.791-.029 9.447 11.843 9.428-11.832 2.819-.009-10.816 13.624 11.448 14.391-2.809.002-10.09-12.613-10.053 12.612-2.812-.004 11.478-14.406zm30.29 7.982h2.188v20.007h-2.188zm0-8.011h2.188v2.94h-2.188zm11.245 10.879l-1.221-1.819c1.584-.982 3.176-1.97 7.152-1.869 3.9.099 8.35 2.978 8.323 6.818v14.015l-2.192.003-.001-2.371c-2.087 1.955-4.561 2.796-7.301 2.866-4.418.114-7.807-2.303-7.8-6.305.005-3.098 1.33-7.117 8.647-7.201 3.064-.036 6.457.858 6.457.858l.001-1.654c.054-2.155-2.469-4.826-6.581-4.829-2.619-.001-3.967.489-5.484 1.488zm12.066 7.288v4.064c-1.964 2.876-4.517 4.102-7.53 4.101-3.408 0-5.317-1.396-5.39-4.228-.082-3.214 2.186-4.863 6.624-4.899 2.1-.017 4.199.362 6.296.962zm18.403-10.997c5.709 0 10.339 4.865 10.339 10.857 0 5.992-4.63 10.857-10.339 10.857-5.704 0-10.335-4.865-10.335-10.857 0-5.992 4.631-10.857 10.335-10.857zm0 2.212c4.499 0 8.149 3.874 8.149 8.645 0 4.771-3.65 8.645-8.149 8.645-4.499 0-8.152-3.874-8.152-8.645 0-4.771 3.653-8.645 8.152-8.645zm16.229-1.389v19.993h2.16v-11.943c.03-2.387 1.76-6.7 6.77-6.699 2.63.001 5.54 1.323 5.67 4.182v14.46h2.2v-13.822c.02-1.896 2.46-4.548 6.38-4.611 3.52-.057 5.83 2.035 5.88 5.351v13.114h2.16v-13.007c.05-4.584-3.09-7.742-8.11-7.691-2.52.025-5 .759-7.09 3.296-1.44-2.016-3.58-3.508-7.27-3.473-2.24.021-4.51.766-6.59 2.977v-2.127zm38.492.018h2.187v20.007H268.1zm0-8.011h2.187v2.94H268.1z"
+            />
+          </svg>
         </div>
         <div>
           <svg
@@ -904,77 +1135,112 @@
       src="//js-na1.hs-scripts.com/50190447.js"
     ></script> -->
     <!-- End of HubSpot Embed Code -->
-    
 
     <script>
-        (function(w,d,u){
-                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn.bitrix24.mx/b34231453/crm/site_button/loader_1_qq146b.js');
+      (function (w, d, u) {
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = u + "?" + ((Date.now() / 60000) | 0);
+        var h = d.getElementsByTagName("script")[0];
+        h.parentNode.insertBefore(s, h);
+      })(
+        window,
+        document,
+        "https://cdn.bitrix24.mx/b34231453/crm/site_button/loader_1_qq146b.js"
+      );
     </script>
 
     <script>
-  function abrirChatSucursal(nombreSucursal) {
-    const mensaje = `Hola Sucursal ${nombreSucursal}`;
+      function abrirChatSucursal(nombreSucursal) {
+        const mensaje = `Hola Sucursal ${nombreSucursal}`;
 
-    // Copiar el mensaje al portapapeles
-    // navigator.clipboard.writeText(mensaje).then(() => {
-    //   console.log(`Mensaje copiado: ${mensaje}`);
-    // });
+        // Copiar el mensaje al portapapeles
+        // navigator.clipboard.writeText(mensaje).then(() => {
+        //   console.log(`Mensaje copiado: ${mensaje}`);
+        // });
 
-    // Intentar encontrar el botón de Bitrix y simular clic
-    let intentos = 0;
-    const maxIntentos = 20;
+        // Intentar encontrar el botón de Bitrix y simular clic
+        let intentos = 0;
+        const maxIntentos = 20;
 
-    const intentarAbrir = () => {
-      // Bitrix genera un botón con esta clase cuando el chat se carga
-      const botonChat = document.querySelector('.b24-widget-button-inner, .b24-widget-button-popup');
+        const intentarAbrir = () => {
+          // Bitrix genera un botón con esta clase cuando el chat se carga
+          const botonChat = document.querySelector(
+            ".b24-widget-button-inner, .b24-widget-button-popup"
+          );
 
-      if (botonChat) {
-        botonChat.click(); // simular clic para abrir el chat
-        console.log('Chat abierto');
-      } else {
-        intentos++;
-        if (intentos < maxIntentos) {
-          setTimeout(intentarAbrir, 500); // reintenta cada 0.5 seg hasta 10 seg máx
-        } else {
-          alert("No se pudo abrir el chat. Intenta manualmente desde el botón flotante.");
-        }
+          if (botonChat) {
+            botonChat.click(); // simular clic para abrir el chat
+            console.log("Chat abierto");
+          } else {
+            intentos++;
+            if (intentos < maxIntentos) {
+              setTimeout(intentarAbrir, 500); // reintenta cada 0.5 seg hasta 10 seg máx
+            } else {
+              alert(
+                "No se pudo abrir el chat. Intenta manualmente desde el botón flotante."
+              );
+            }
+          }
+        };
+
+        intentarAbrir();
       }
-    };
+    </script>
 
-    intentarAbrir();
-  }
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // duración de la animación
+        once: true, // solo se anima una vez
+      });
+    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,     // duración de la animación
-    once: true         // solo se anima una vez
-  });
-</script>
+    <div id="modal-mapa" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarMapa()">&times;</span>
+        <iframe
+          id="iframe-mapa"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
 
-<div id="modal-mapa" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarMapa()">&times;</span>
-    <iframe id="iframe-mapa" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-  </div>
-</div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const galeria = document.querySelector(".galeria-sucursales");
+        const cards = Array.from(galeria.querySelectorAll(".sucursal-card"));
 
-<script>
-  function abrirMapa(url) {
-  document.getElementById('iframe-mapa').src = url;
-  document.getElementById('modal-mapa').style.display = 'flex';
-}
+        cards.sort((a, b) => {
+          const nombreA = a
+            .querySelector("h3")
+            .textContent.trim()
+            .toLowerCase();
+          const nombreB = b
+            .querySelector("h3")
+            .textContent.trim()
+            .toLowerCase();
+          return nombreA.localeCompare(nombreB);
+        });
 
-function cerrarMapa() {
-  document.getElementById('modal-mapa').style.display = 'none';
-  document.getElementById('iframe-mapa').src = '';
-}
-</script>
+        cards.forEach((card) => galeria.appendChild(card)); // Reorganiza el DOM
+      });
+    </script>
 
+    <script>
+      function abrirMapa(url) {
+        document.getElementById("iframe-mapa").src = url;
+        document.getElementById("modal-mapa").style.display = "flex";
+      }
 
-     
+      function cerrarMapa() {
+        document.getElementById("modal-mapa").style.display = "none";
+        document.getElementById("iframe-mapa").src = "";
+      }
+    </script>
   </body>
 </html>
