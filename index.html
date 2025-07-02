@@ -1231,6 +1231,8 @@
       });
     </script>
 
+    
+
     <script>
       function abrirMapa(url) {
         document.getElementById("iframe-mapa").src = url;
@@ -1242,5 +1244,20 @@
         document.getElementById("iframe-mapa").src = "";
       }
     </script>
+
+    <script>
+  window.addEventListener("load", function () {
+    const contenedor = document.querySelector(".store-card--container");
+    if (contenedor) {
+      // Asegura scroll a la izquierda sin animación
+      contenedor.scrollLeft = 0;
+
+      // Reintento extra en caso de que algo lo mueva después
+      setTimeout(() => {
+        contenedor.scrollLeft = 0;
+      }, 300);
+    }
+  });
+</script>
   </body>
 </html>

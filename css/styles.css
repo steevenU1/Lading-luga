@@ -638,17 +638,16 @@ body{
     margin-top: 20px;
 }
 
-.store-card--container{
-    display: flex;
-    
-    /* justify-content: center; */
-    align-items: center;
-    padding: 10px 0;
-    margin: 15px 0;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
-
+.store-card--container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* <- evita centrado vertical */
+  justify-content: flex-start; /* <- importante */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 0; /* Asegura que el scroll comience desde el borde */
+  padding: 10px 0;
+  gap: 20px;
 }
 
 
@@ -665,7 +664,7 @@ body{
     border: none;
     border-radius: 8px;
     box-shadow: 5px 5px 5px 0px rgba(230,230,230,0.05);
-    scroll-snap-align: center;
+    scroll-snap-align: start; /* Alinea el inicio de la tarjeta al inicio del contenedor */
 
 }
 
