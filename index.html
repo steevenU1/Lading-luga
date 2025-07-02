@@ -626,10 +626,7 @@
 
         <div class="sucursal-card">
           <h3>Atlacomulco</h3>
-          <img
-            src="./assets/img/sucAtlacomulco.png"
-            alt="Sucursal Alpinismo"
-          />
+          <img src="./assets/img/sucAtlacomulco.png" alt="Sucursal Alpinismo" />
           <p class="direccion">
             Mario Colin Sanchez 355, La Asuncion, Atlacomulco 50450
           </p>
@@ -1231,8 +1228,6 @@
       });
     </script>
 
-    
-
     <script>
       function abrirMapa(url) {
         document.getElementById("iframe-mapa").src = url;
@@ -1246,18 +1241,10 @@
     </script>
 
     <script>
-  window.addEventListener("load", function () {
-    const contenedor = document.querySelector(".store-card--container");
-    if (contenedor) {
-      // Asegura scroll a la izquierda sin animación
-      contenedor.scrollLeft = 0;
-
-      // Reintento extra en caso de que algo lo mueva después
-      setTimeout(() => {
-        contenedor.scrollLeft = 0;
-      }, 300);
-    }
-  });
-</script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const galeria = document.querySelector(".galeria-sucursales");
+        if (galeria) galeria.scrollLeft = 0;
+      });
+    </script>
   </body>
 </html>
