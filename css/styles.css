@@ -836,6 +836,7 @@ body{
   text-align: center;
   padding: 15px;
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .producto h3{
@@ -851,6 +852,12 @@ body{
 .producto img {
   width: 100%;
   border-radius: 8px;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.producto:hover img {
+  transform: scale(1.1);
 }
 
 .precio {
@@ -862,6 +869,7 @@ body{
   margin-top: 10px;
   background-color: #f11716;
   color: white;
+  font-weight: bold;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -950,64 +958,75 @@ body{
 
 
  .carousel-wrapper {
-      text-align: center;
-      padding-top: 30px;
-      background-color: #f5f5f5;
-      margin-bottom: 0;
-    }
+  text-align: center;
+  padding-top: 30px;
+  background-color: #f5f5f5;
+  margin-bottom: 0;
+}
 
-    .carousel-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #333;
-    }
+.carousel-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
 
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 50px auto;
-      margin-bottom: 0;
-      padding-bottom: 20px;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
+/* NUEVO texto fuera de las imágenes */
+.promo-text-dynamic {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #f11716;
+  transition: opacity 0.3s ease;
+}
 
-    .carousel-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
 
-    .carousel-slides img {
-      width: 100%;
-      flex-shrink: 0;
-    }
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 20px;
-      border-radius: 50%;
-    }
+.carousel-slide {
+  flex-shrink: 0;
+  width: 100%;
+}
 
-    .carousel-button:hover {
-      background-color: rgba(255, 255, 255, 1);
-    }
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
 
-    #prevBtn {
-      left: 10px;
-    }
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
 
-    #nextBtn {
-      right: 10px;
-    }
+.carousel-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dots .active {
+  background-color: #f11716;
+}
 
 @media (max-width:930px){
     .up-main--title{

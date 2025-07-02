@@ -188,45 +188,73 @@
     <div class="carousel-wrapper" id="graduacion-promo">
       <div class="carousel-title">Disfruta de promociones exclusivas</div>
 
+      <!-- Mini texto temporalidad -->
+      <div id="promoTextDynamic" class="promo-text-dynamic">
+        ¡Gradúate con estilo!
+      </div>
+
       <div class="carousel-container">
         <div class="carousel-slides" id="carousel">
-          <img
-            src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_70e69f3b.jpg"
-            alt="Imagen 1"
-          />
-          <img
-            src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_7110a503.jpg"
-            alt="Imagen 2"
-          />
-          <img
-            src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.19_37e43f51.jpg"
-            alt="Imagen 3"
-          />
+          <div class="carousel-slide">
+            <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_70e69f3b.jpg" alt="Imagen 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.13_7110a503.jpg" alt="Imagen 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/img/Imagen de WhatsApp 2025-06-14 a las 10.25.19_37e43f51.jpg" alt="Imagen 3" />
+          </div>
         </div>
-        <button class="carousel-button" id="prevBtn">&#10094;</button>
-        <button class="carousel-button" id="nextBtn">&#10095;</button>
       </div>
+
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
     <!-- Script para mover galeria de promos -->
     <script>
       const carousel = document.getElementById("carousel");
-      const slides = carousel.children.length;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const promoText = document.getElementById("promoTextDynamic");
+      const dotsContainer = document.getElementById("carouselDots");
+
       let index = 0;
 
-      function showSlide(i) {
-        index = (i + slides) % slides;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
+      const textosPromo = [
+        "¡Gradúate con estilo!",
+        "Hasta 30% en equipos seleccionados",
+        "Promociones por tiempo limitado",
+      ];
+
+      // Crear puntos de navegación
+      slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        dot.addEventListener("click", () => showSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateDots() {
+        [...dotsContainer.children].forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
       }
 
-      document
-        .getElementById("prevBtn")
-        .addEventListener("click", () => showSlide(index - 1));
-      document
-        .getElementById("nextBtn")
-        .addEventListener("click", () => showSlide(index + 1));
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+
+        // Animación de texto
+        promoText.style.opacity = 0;
+        setTimeout(() => {
+          promoText.textContent = textosPromo[index];
+          promoText.style.opacity = 1;
+        }, 300);
+
+        updateDots();
+      }
 
       setInterval(() => showSlide(index + 1), 5000);
+
+      updateDots(); // inicial
     </script>
 
     <section class="credit-section">
