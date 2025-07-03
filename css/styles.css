@@ -651,6 +651,7 @@ body {
   font-weight: bold;
   color: #0056b3; /* Azul más oscuro */
   font-size: 13px;
+  /*font-size: 16px; podria mejhorar la accesibilidad*/
 }
 
 .boton-ver {
