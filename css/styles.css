@@ -194,125 +194,7 @@ body{
 
 }
 
-/* .hero-seccion {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  padding: 60px 20px;
-  gap: 40px;
-}
 
-.hero-contenido {
-  flex: 1 1 400px;
-  max-width: 500px;
-  text-align: left;
-}
-
-.hero-contenido h1 {
-  font-size: 40px;
-  color: #111;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.hero-contenido p {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 30px;
-  line-height: 1.5;
-}
-
-.btn-estrena {
-  display: inline-block;
-  background-color: #d32f2f;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn-estrena:hover {
-  background-color: #b71c1c;
-}
-
-.hero-imagen {
-  flex: 1 1 300px;
-  max-width: 400px;
-  text-align: center;
-}
-
-.hero-imagen img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-} */
-
-.documents-section{
-    width: 100%;
-    min-width: 320px;
-    height: auto;
-    
-    background-color: var(--primary-color);
-}
-
-.documents-card--container{
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-
-.documents-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    width: 500px;
-    height: 250px;
-    background-color: var(--secundary-color);
-    border: none;
-    border-radius: 20px;
-    margin: 30px 15px;
-    box-shadow: 6px 7px 20px -6px rgba(0,0,0,0.75);
-
-}
-
-.documents-card .main-card-title{
-    font-size: 4.5rem; /*cambie tamaño despues de ajustar cards*/
-    font-weight: 800;
-}
-
-.documents-card h3{
-    font-size: 2.5rem; 
-    color: var(--bg-color);
-    font-weight: 800;
-    margin-bottom: 20px;
-    padding: 0 10px;
-
-}
-
-.documents-card p{
-    font-size: 1.3rem;
-    line-height: 2.5rem;
-    color: var(--bg-color);
-    
-    padding: 0 30px;
-
-}
-.documents-card svg{
-    position: absolute;
-    top: -30px;
-}
 
   .pasos-container {
     background-color: #f5f5f5;
@@ -419,7 +301,7 @@ body{
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;  /* 🟢 esto activa el snap */
+  scroll-snap-type: x mandatory; 
   padding: 10px 20px;
   scrollbar-width: thin;
   scrollbar-color: #d32f2f #e0e0e0;
@@ -622,109 +504,6 @@ body{
   background-color: #333;
 }
 
-
-.store-main-section{
-    width: 100%;
-    height: auto;
-    text-align: center;
-    color: var(--bg-color);
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 5px;
-    background-color: var(--secundary-color);
-}
-
-.store-main-section h2{
-    margin-top: 20px;
-}
-
-.store-card--container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* <- evita centrado vertical */
-  justify-content: flex-start; /* <- importante */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 0; /* Asegura que el scroll comience desde el borde */
-  padding: 10px 0;
-  gap: 20px;
-}
-
-
-.store-card{
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 400px;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    margin: 0 20px 15px 20px;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px 0px rgba(230,230,230,0.05);
-    scroll-snap-align: start; /* Alinea el inicio de la tarjeta al inicio del contenedor */
-
-}
-
-.store-card h3{
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-
-.store-card p{
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 2rem;
-    align-self: baseline;
-    width: 180px;
-    height: 60px;
-    padding: 5px;
-    /* margin-bottom: 20px; */
-}
-
-.store-card--img{
-    width: 180px;
-    height: 115px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    
-    object-position: center;
-    
-}
-
-.store-card--img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.map-button, .dial-button{
-    width: 180px;
-    height: 40px;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 7px 6px 12px -3px rgba(0,0,0,0.75);
-    background-color: #020202;
-    justify-self: center;
-    margin-top: 20px;
-}
-
-.map-button a, .dial-button a{
-    text-decoration: none;
-    color: var(--bg-color);
-    font-weight: 600;
-}
-
-.map-button:hover, .dial-button:hover{
-    color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 4px 16px rgb(154, 99, 99);
-    transition: all 0.2s ease;
-}
 
 
 
@@ -971,7 +750,7 @@ body{
   color: #333;
 }
 
-/* NUEVO texto fuera de las imágenes */
+/* Texto descriptivo promos */
 .promo-text-dynamic {
   font-size: 18px;
   font-weight: 500;
