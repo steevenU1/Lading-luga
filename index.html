@@ -993,39 +993,34 @@
     </script> -->
 
     <script>
-  function abrirChatSucursal(nombreSucursal) {
-    setTimeout(() => {
-      let intentos = 0;
-      const maxIntentos = 20;
+      function abrirChatSucursal(nombreSucursal) {
+        let intentos = 0;
+        const maxIntentos = 20;
+        const intervalo = 500;
 
-      const intentarAbrir = () => {
-        const botonChat = document.querySelector(".cfplt-widget__open-btn");
+        const intentarAbrir = () => {
+          const botonChat = document.querySelector(".cfplt-widget__open-btn");
 
-        if (botonChat) {
-          botonChat.click();
-          console.log(`Chat abierto para: ${nombreSucursal}`);
-        } else {
-          intentos++;
-          if (intentos < maxIntentos) {
-            setTimeout(intentarAbrir, 500);
+          if (botonChat && typeof botonChat.click === "function") {
+            botonChat.click();
+            console.log(`✅ Chat abierto para: ${nombreSucursal}`);
           } else {
-            alert("No se pudo abrir el chat. Intenta manualmente.");
+            intentos++;
+            console.log(
+              `⏳ Intento ${intentos}: esperando que cargue el botón del chat...`
+            );
+
+            if (intentos < maxIntentos) {
+              setTimeout(intentarAbrir, intervalo);
+            } else {
+              alert("❌ No se pudo abrir el chat. Intenta manualmente.");
+            }
           }
-        }
-      };
+        };
 
-      intentarAbrir();
-    }, 3000); // espera 3 segundos antes de intentar
-  }
-</script>
-
-    <!-- Script para animaciones -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 800, // duración de la animación
-        once: true, // solo se anima una vez
-      });
+        // Esperar un poco para asegurar que Chatfuel se cargue
+        setTimeout(intentarAbrir, 1500);
+      }
     </script>
 
     <!-- Modelado del pop up mapas -->
