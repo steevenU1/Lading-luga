@@ -993,8 +993,8 @@
     </script> -->
 
     <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    window.abrirChatSucursal = function(nombreSucursal) {
+  function abrirChatSucursal(nombreSucursal) {
+    setTimeout(() => {
       let intentos = 0;
       const maxIntentos = 20;
 
@@ -1015,8 +1015,8 @@
       };
 
       intentarAbrir();
-    };
-  });
+    }, 3000); // espera 3 segundos antes de intentar
+  }
 </script>
 
     <!-- Script para animaciones -->
