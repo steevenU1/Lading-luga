@@ -993,28 +993,30 @@
     </script> -->
 
     <script>
-  function abrirChatSucursal(nombreSucursal) {
-    let intentos = 0;
-    const maxIntentos = 20;
+  window.addEventListener("DOMContentLoaded", () => {
+    window.abrirChatSucursal = function(nombreSucursal) {
+      let intentos = 0;
+      const maxIntentos = 20;
 
-    const intentarAbrir = () => {
-      const botonChat = document.querySelector('.cfplt-widget__open-btn');
+      const intentarAbrir = () => {
+        const botonChat = document.querySelector(".cfplt-widget__open-btn");
 
-      if (botonChat) {
-        botonChat.click();
-        console.log(`Chat abierto para: ${nombreSucursal}`);
-      } else {
-        intentos++;
-        if (intentos < maxIntentos) {
-          setTimeout(intentarAbrir, 500); // reintenta cada 0.5s
+        if (botonChat) {
+          botonChat.click();
+          console.log(`Chat abierto para: ${nombreSucursal}`);
         } else {
-          alert('No se pudo abrir el chat. Intenta manualmente.');
+          intentos++;
+          if (intentos < maxIntentos) {
+            setTimeout(intentarAbrir, 500);
+          } else {
+            alert("No se pudo abrir el chat. Intenta manualmente.");
+          }
         }
-      }
-    };
+      };
 
-    intentarAbrir();
-  }
+      intentarAbrir();
+    };
+  });
 </script>
 
     <!-- Script para animaciones -->
