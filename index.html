@@ -377,7 +377,7 @@
             </button>
 
             <button
-              class="btn-contacto"
+              class="boton-chat" data-sucursal="Toluca"
               onclick="abrirChatSucursal('Ixtlahuaca II')"
             >
               Contáctanos
@@ -993,27 +993,40 @@
     </script> -->
 
     <script>
-      function abrirChat() {
-        const btn = document.querySelector(".cfplt-widget__open-btn");
-        if (btn) {
-          btn.click();
-        } else {
-          console.warn("Botón de chat no encontrado");
-        }
-      }
+  window.addEventListener("DOMContentLoaded", () => {
+    function abrirChatSucursal(nombreSucursal) {
+      const mensaje = `Hola Sucursal ${nombreSucursal}`;
+      let intentos = 0;
+      const maxIntentos = 20;
 
-      // Espera a que cargue el DOM y el script
-      window.addEventListener("DOMContentLoaded", () => {
-        // Retardo opcional para asegurar que el widget ya se cargó
-        setTimeout(() => {
-          document
-            .querySelectorAll(".boton-chat, .tu-clase-button")
-            .forEach((el) => {
-              el.addEventListener("click", abrirChat);
-            });
-        }, 2000);
+      const intentarAbrir = () => {
+        const botonChat = document.querySelector(".cfplt-widget__open-btn");
+        if (botonChat) {
+          botonChat.click(); // simula clic
+          console.log("Chat abierto");
+        } else {
+          intentos++;
+          if (intentos < maxIntentos) {
+            setTimeout(intentarAbrir, 500); // reintenta cada 0.5s
+          } else {
+            alert("No se pudo abrir el chat. Intenta manualmente.");
+          }
+        }
+      };
+
+      // Espera 2 segundos antes de empezar
+      setTimeout(intentarAbrir, 2000);
+    }
+
+    // Si deseas llamar esto desde un botón:
+    document.querySelectorAll("[data-sucursal]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const nombre = btn.dataset.sucursal;
+        abrirChatSucursal(nombre);
       });
-    </script>
+    });
+  });
+</script>
 
     <!-- Modelado del pop up mapas -->
     <div id="modal-mapa" class="modal">
