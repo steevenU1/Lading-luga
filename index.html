@@ -954,7 +954,7 @@
 
     <!-- Script para abrir el chat de Bitrix24 con botones -->
 
-    <!-- <script>
+    <script>
       function abrirChatSucursal(nombreSucursal) {
         const mensaje = `Hola Sucursal ${nombreSucursal}`;
 
@@ -990,43 +990,16 @@
 
         intentarAbrir();
       }
-    </script> -->
+    </script>
 
+    <!-- Script para animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    function abrirChatSucursal(nombreSucursal) {
-      const mensaje = `Hola Sucursal ${nombreSucursal}`;
-      let intentos = 0;
-      const maxIntentos = 20;
-
-      const intentarAbrir = () => {
-        const botonChat = document.querySelector(".cfplt-widget__open-btn");
-        if (botonChat) {
-          botonChat.click(); // simula clic
-          console.log("Chat abierto");
-        } else {
-          intentos++;
-          if (intentos < maxIntentos) {
-            setTimeout(intentarAbrir, 500); // reintenta cada 0.5s
-          } else {
-            alert("No se pudo abrir el chat. Intenta manualmente.");
-          }
-        }
-      };
-
-      // Espera 2 segundos antes de empezar
-      setTimeout(intentarAbrir, 2000);
-    }
-
-    // Si deseas llamar esto desde un botón:
-    document.querySelectorAll("[data-sucursal]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const nombre = btn.dataset.sucursal;
-        abrirChatSucursal(nombre);
+      AOS.init({
+        duration: 800, // duración de la animación
+        once: true, // solo se anima una vez
       });
-    });
-  });
-</script>
+    </script>
 
     <!-- Modelado del pop up mapas -->
     <div id="modal-mapa" class="modal">
