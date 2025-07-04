@@ -993,34 +993,26 @@
     </script> -->
 
     <script>
-      function abrirChatSucursal(nombreSucursal) {
-        let intentos = 0;
-        const maxIntentos = 20;
-        const intervalo = 500;
-
-        const intentarAbrir = () => {
-          const botonChat = document.querySelector(".cfplt-widget__open-btn");
-
-          if (botonChat && typeof botonChat.click === "function") {
-            botonChat.click();
-            console.log(`✅ Chat abierto para: ${nombreSucursal}`);
-          } else {
-            intentos++;
-            console.log(
-              `⏳ Intento ${intentos}: esperando que cargue el botón del chat...`
-            );
-
-            if (intentos < maxIntentos) {
-              setTimeout(intentarAbrir, intervalo);
-            } else {
-              alert("❌ No se pudo abrir el chat. Intenta manualmente.");
-            }
-          }
-        };
-
-        // Esperar un poco para asegurar que Chatfuel se cargue
-        setTimeout(intentarAbrir, 1500);
+      function abrirChat() {
+        const btn = document.querySelector(".cfplt-widget__open-btn");
+        if (btn) {
+          btn.click();
+        } else {
+          console.warn("Botón de chat no encontrado");
+        }
       }
+
+      // Espera a que cargue el DOM y el script
+      window.addEventListener("DOMContentLoaded", () => {
+        // Retardo opcional para asegurar que el widget ya se cargó
+        setTimeout(() => {
+          document
+            .querySelectorAll(".boton-chat, .tu-clase-button")
+            .forEach((el) => {
+              el.addEventListener("click", abrirChat);
+            });
+        }, 2000);
+      });
     </script>
 
     <!-- Modelado del pop up mapas -->
