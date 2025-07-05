@@ -781,9 +781,9 @@ body {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -797,13 +797,18 @@ body {
 .carousel-slide {
   flex-shrink: 0;
   width: 100%;
+  aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: contain;
   border-radius: 10px;
+  display: block; 
 }
 
 .carousel-dots {
@@ -824,6 +829,27 @@ body {
 
 .carousel-dots .active {
   background-color: #f11716;
+}
+
+/* 🔽 MEDIA QUERY para dispositivos pequeños */
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    padding-top: 20px;
+  }
+
+  .carousel-title {
+    font-size: 22px;
+  }
+
+  .promo-text-dynamic {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .carousel-container {
+    max-width: 95%;
+    padding-bottom: 10px;
+  }
 }
 
 @media (max-width:930px) {
@@ -926,3 +952,65 @@ body {
     transform: translateY(0);
   }
 }
+
+.custom-footer {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  border-top: 2px solid #e0e0e0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.footer-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #c2183f; /* color institucional */
+}
+
+.footer-card p, .footer-card a {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #c2183f;
+}
+
+.footer-icons a:hover {
+  color: #000;
+}
+
+.footer-legal {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+
