@@ -33,6 +33,8 @@
     <!-- /Brevo Conversations {/literal} -->
   </head>
 
+  
+
   <body>
     <div class="banner-graduacion">
       <p>
@@ -1009,44 +1011,7 @@
       }
     </script> -->
 
-    <script>
-      function abrirChatSucursal(nombreSucursal) {
-        const mensaje = `Hola, quiero información de la sucursal ${nombreSucursal}`;
-        let chatAbierto = false;
-
-        // Función para intentar abrir el chat si el botón ya está disponible
-        const abrirSiExiste = () => {
-          const brevoBoton = document.querySelector(".js-header");
-          if (brevoBoton && brevoBoton.offsetParent !== null) {
-            brevoBoton.click();
-            chatAbierto = true;
-            console.log("✅ Chat Brevo abierto");
-          }
-        };
-
-        abrirSiExiste();
-
-        if (!chatAbierto) {
-          // Usamos un observer para detectar cuando aparece el botón en el DOM
-          const observer = new MutationObserver(() => {
-            const brevoBoton = document.querySelector(".js-header");
-            if (brevoBoton && brevoBoton.offsetParent !== null) {
-              brevoBoton.click();
-              console.log("✅ Chat Brevo abierto vía observer");
-              observer.disconnect(); // Dejamos de observar
-            }
-          });
-
-          observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-          });
-
-          // Como respaldo, dejamos de observar después de 10 segundos
-          setTimeout(() => observer.disconnect(), 10000);
-        }
-      }
-    </script>
+    
 
     <!-- Script para animaciones -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
