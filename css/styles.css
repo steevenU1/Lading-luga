@@ -760,6 +760,7 @@ body {
   padding-top: 30px;
   background-color: #f5f5f5;
   margin-bottom: 0;
+  
 }
 
 .carousel-title {
@@ -787,6 +788,7 @@ body {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 500px; /* Ajusta según tus imágenes */
 }
 
 .carousel-slides {
@@ -806,9 +808,8 @@ body {
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* Asegura que la imagen no se deforme ni recorte */
   border-radius: 10px;
-  display: block; 
 }
 
 .carousel-dots {
