@@ -14,6 +14,23 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+
+    <!-- Brevo Conversations {literal} -->
+    <script>
+      (function (d, w, c) {
+        w.BrevoConversationsID = "686849f69228f195ad06e7dc";
+        w[c] =
+          w[c] ||
+          function () {
+            (w[c].q = w[c].q || []).push(arguments);
+          };
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = "https://conversations-widget.brevo.com/brevo-conversations.js";
+        if (d.head) d.head.appendChild(s);
+      })(document, window, "BrevoConversations");
+    </script>
+    <!-- /Brevo Conversations {/literal} -->
   </head>
 
   <body>
@@ -1077,7 +1094,7 @@
     <!-- <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="686740ab4b39407638011eca" async></script> -->
 
     <!-- Script de chatfuel -->
-    <script>
+    <!-- <script>
       (function () {
         var script = document.createElement("script");
         script.dataset.bot = "686749e481b1c54250ac7a3e";
@@ -1088,6 +1105,6 @@
         script.defer = true;
         document.getElementsByTagName("head")[0].appendChild(script);
       })();
-    </script>
+    </script> -->
   </body>
 </html>
