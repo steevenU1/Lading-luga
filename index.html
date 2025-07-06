@@ -291,7 +291,10 @@
       <div class="credit-section--title">
         <h2>¡Estrena hoy!</h2>
         <p>Queremos mantenerte conectado con financiamiento accesible.</p>
-        <button class="contact-button" onclick="event.preventDefault(); abrirChatSucursal('Luga')">
+        <button
+          class="contact-button"
+          onclick="event.preventDefault(); abrirChatSucursal('Luga')"
+        >
           <a
             class="contact-button--link"
             href="#"
@@ -1053,6 +1056,30 @@
         document.getElementsByTagName("head")[0].appendChild(script);
       })();
     </script>
+
+    <section class="portabilidad-section">
+      <h2 class="portabilidad-titulo">¡Cámbiate a Bait!</h2>
+
+      <div class="portabilidad-container">
+        <div class="portabilidad-img-left">
+          <img src="./assets/promos/chica con cel porta.png" alt="Chica Bait" />
+        </div>
+        <div class="portabilidad-texto">
+          <p>
+            Disfruta de 9 GB + redes sociales ilimitadas por solo $100 al mes.
+          </p>
+          <button
+            onclick="abrirChatSucursal('Portabilidad')"
+            class="btn-portabilidad"
+          >
+            Solicita información
+          </button>
+        </div>
+        <div class="portabilidad-img-right">
+          <img src="./assets/promos/simsBait.png" alt="Tarjeta SIM Bait" />
+        </div>
+      </div>
+    </section>
 
     <footer class="custom-footer">
       <div class="footer-grid">
