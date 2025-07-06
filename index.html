@@ -14,8 +14,6 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
-
-    
   </head>
 
   <body>
@@ -242,52 +240,7 @@
       <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
-    <!-- Script para mover galeria de promos -->
-    <!-- <script>
-      const carousel = document.getElementById("carousel");
-      const slides = document.querySelectorAll(".carousel-slide");
-      const promoText = document.getElementById("promoTextDynamic");
-      const dotsContainer = document.getElementById("carouselDots");
-
-      let index = 0;
-
-      const textosPromo = [
-        "¡Gradúate con estilo!",
-        "Hasta 30% en equipos seleccionados",
-        "Promociones por tiempo limitado",
-      ];
-
-      // Crear puntos de navegación
-      slides.forEach((_, i) => {
-        const dot = document.createElement("span");
-        dot.addEventListener("click", () => showSlide(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      function updateDots() {
-        [...dotsContainer.children].forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
-
-      function showSlide(i) {
-        index = (i + slides.length) % slides.length;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-
-        // Animación de texto
-        promoText.style.opacity = 0;
-        setTimeout(() => {
-          promoText.textContent = textosPromo[index];
-          promoText.style.opacity = 1;
-        }, 300);
-
-        updateDots();
-      }
-
-      setInterval(() => showSlide(index + 1), 5000);
-
-      updateDots(); // inicial
-    </script> -->
+    
 
     <script>
       const carousel = document.getElementById("carousel");
@@ -301,7 +254,7 @@
         "¡Gradúate con estilo!",
         "Las mejores marcas al mejor precio",
         "Promociones por tiempo limitado",
-        "Enganches accesibles"
+        "Enganches accesibles",
       ];
 
       // Crear puntos de navegación
@@ -344,7 +297,7 @@
           <a
             class="contact-button--link"
             href="#"
-            onclick="event.preventDefault(); abrirChatSucursal('Toluca')"
+            onclick="event.preventDefault(); abrirChatSucursal('Luga')"
             >Estrena celular</a
           >
         </button>
@@ -443,7 +396,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Alpinismo')"
             >
               Contáctanos
             </button>
@@ -470,7 +423,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Ixtlahuaca I')"
             >
               Contáctanos
             </button>
@@ -497,7 +450,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('San Andres')"
             >
               Contáctanos
             </button>
@@ -524,7 +477,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Temoaya')"
             >
               Contáctanos
             </button>
@@ -551,7 +504,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Calimaya')"
             >
               Contáctanos
             </button>
@@ -578,7 +531,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Ixtapan')"
             >
               Contáctanos
             </button>
@@ -605,7 +558,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Tonatico')"
             >
               Contáctanos
             </button>
@@ -632,7 +585,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Xonacatlan')"
             >
               Contáctanos
             </button>
@@ -659,7 +612,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('San Pablo')"
             >
               Contáctanos
             </button>
@@ -686,7 +639,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Atlacomulco')"
             >
               Contáctanos
             </button>
@@ -714,7 +667,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Coatepec')"
             >
               Contáctanos
             </button>
@@ -739,7 +692,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Villa Guerrero')"
             >
               Contáctanos
             </button>
@@ -766,7 +719,7 @@
 
             <button
               class="btn-contacto"
-              onclick="abrirChatSucursal('Ixtlahuaca II')"
+              onclick="abrirChatSucursal('Valle de Bravo')"
             >
               Contáctanos
             </button>
@@ -1017,45 +970,18 @@
       </section>
     </section>
 
-    <!-- Script para abrir el chat de Bitrix24 con botones -->
 
-    <!-- <script>
+    <!-- Script para enviar WA -->
+    <script>
       function abrirChatSucursal(nombreSucursal) {
-        const mensaje = `Hola Sucursal ${nombreSucursal}`;
-
-        // Copiar el mensaje al portapapeles
-        // navigator.clipboard.writeText(mensaje).then(() => {
-        //   console.log(`Mensaje copiado: ${mensaje}`);
-        // });
-
-        // Intentar encontrar el botón de Bitrix y simular clic
-        let intentos = 0;
-        const maxIntentos = 20;
-
-        const intentarAbrir = () => {
-          // Bitrix genera un botón con esta clase cuando el chat se carga
-          const botonChat = document.querySelector(
-            ".b24-widget-button-inner, .b24-widget-button-popup"
-          );
-
-          if (botonChat) {
-            botonChat.click(); // simular clic para abrir el chat
-            console.log("Chat abierto");
-          } else {
-            intentos++;
-            if (intentos < maxIntentos) {
-              setTimeout(intentarAbrir, 500); // reintenta cada 0.5 seg hasta 10 seg máx
-            } else {
-              alert(
-                "No se pudo abrir el chat. Intenta manualmente desde el botón flotante."
-              );
-            }
-          }
-        };
-
-        intentarAbrir();
+        const numero = "5215627158249"; // cambia por tu número
+        const mensaje = `Hola Luga!, quiero información para comprar en la sucursal ${nombreSucursal}`;
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(
+          mensaje
+        )}`;
+        window.open(url, "_blank");
       }
-    </script> -->
+    </script>
 
     <!-- Script para animaciones -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -1123,8 +1049,6 @@
       });
     </script>
 
-    
-
     <!-- Script de chatfuel -->
     <script>
       (function () {
@@ -1159,7 +1083,6 @@
         <div class="footer-card">
           <h3>Horarios</h3>
           <p>L-D: 11:00 a.m. - 7:00 p.m.</p>
-          
         </div>
 
         <div class="footer-card">
@@ -1179,10 +1102,10 @@
         </p>
         <p class="disclaimer">
           *Todos los logotipos, marcas comerciales y nombres de productos
-          mostrados en este sitio, incluyendo BAIT®, PayJoy®, KrediYA®  Samsung®, Honor®, Xiaomi®, entre otros, son
-          propiedad de sus respectivos titulares. Su uso es únicamente con fines
-          ilustrativos y no implica afiliación, patrocinio ni asociación oficial
-          con estas marcas.
+          mostrados en este sitio, incluyendo BAIT®, PayJoy®, KrediYA® Samsung®,
+          Honor®, Xiaomi®, entre otros, son propiedad de sus respectivos
+          titulares. Su uso es únicamente con fines ilustrativos y no implica
+          afiliación, patrocinio ni asociación oficial con estas marcas.
         </p>
       </div>
     </footer>
