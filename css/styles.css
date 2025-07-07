@@ -176,9 +176,12 @@ body {
   min-width: 48px;
   min-height: 48px;
   padding: 12px 16px;
-  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--bg-color);
+  font-family: Circular, sans-serif;
 }
 
 
@@ -191,10 +194,7 @@ body {
 
 .contact-button--link {
   text-decoration: none;
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--bg-color);
-  font-family: Circular, sans-serif;
+  
 
 }
 
@@ -1033,13 +1033,14 @@ body {
 }
 
 .footer-icons a {
-  margin: 0 10px;
-  font-size: 1.5rem;
-  color: #c2183f;
+  color: #333;
+  font-size: 20px;
+  margin-right: 12px;
+  transition: color 0.3s ease;
 }
 
 .footer-icons a:hover {
-  color: #000;
+  color: #1877f2; /* color azul Facebook */
 }
 
 .footer-legal {
@@ -1076,6 +1077,12 @@ body {
   margin-bottom: 40px;
 }
 
+.portabilidad-titulo span {
+  color: #ffd100;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .portabilidad-container {
   display: flex;
   align-items: center;
@@ -1100,6 +1107,7 @@ body {
   text-align: center;
 }
 
+
 .portabilidad-img-left img,
 .portabilidad-img-right img {
   max-height: 80%; /* Ajusta esto según lo que necesites */
@@ -1109,6 +1117,37 @@ body {
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.1));
   margin: 0 100px;
 }
+
+.circulo-decorativo {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.circulo-decorativo::before,
+.circulo-decorativo::after {
+  content: '';
+  position: absolute;
+  background-color: #0489d7;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.circulo-decorativo::before {
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  left: -30px;
+}
+
+.circulo-decorativo::after {
+  width: 80px;
+  height: 80px;
+  bottom: -20px;
+  right: -20px;
+}
+
 
 /* Difuminado izquierdo */
 .portabilidad-img-left img {
@@ -1120,6 +1159,9 @@ body {
   max-width: 400px;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  /* background-color: #fffbe6; */
 }
 
 .portabilidad-texto h2 {
@@ -1144,7 +1186,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: background 0.3s ease;
-  width: 250px;
+  width: 230px;
   height: 60px;
   font-size: 18px;
 }
@@ -1184,7 +1226,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .portabilidad-img-left img,
   .portabilidad-img-right img {
     width: 140px;

@@ -14,6 +14,10 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -240,7 +244,6 @@
       <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
-   
     <script>
       const carousel = document.getElementById("carousel");
       const slides = document.querySelectorAll(".carousel-slide");
@@ -296,12 +299,7 @@
           class="contact-button"
           onclick="event.preventDefault(); abrirChatSucursal('Luga', 'Hola Luga, quiero estrenar celular')"
         >
-          <a
-            class="contact-button--link"
-            href="#"
-            onclick="event.preventDefault(); abrirChatSucursal('Luga', 'Hola Luga, quiero estrenar celular')"
-            >Estrena celular</a
-          >
+          Estrena celular
         </button>
       </div>
       <div class="credit-section-img">
@@ -968,16 +966,18 @@
 
     <!-- Script para enviar WA -->
     <script>
-  function abrirChatSucursal(nombreSucursal, mensajePersonalizado = "") {
-    const numero = "5215627158249"; // tu número
-    const mensajeBase = mensajePersonalizado
-      ? mensajePersonalizado
-      : `Hola Luga!, quiero información para comprar en la sucursal ${nombreSucursal}`;
+      function abrirChatSucursal(nombreSucursal, mensajePersonalizado = "") {
+        const numero = "5215627158249"; // tu número
+        const mensajeBase = mensajePersonalizado
+          ? mensajePersonalizado
+          : `Hola Luga!, quiero información para comprar en la sucursal ${nombreSucursal}`;
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensajeBase)}`;
-    window.open(url, "_blank");
-  }
-</script>
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(
+          mensajeBase
+        )}`;
+        window.open(url, "_blank");
+      }
+    </script>
 
     <!-- Script para animaciones -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -1060,18 +1060,25 @@
     </script>
 
     <section class="portabilidad-section">
-      <h2 class="portabilidad-titulo">¡Cámbiate a Bait!</h2>
+      <h2 class="portabilidad-titulo">¡Cámbiate a <span>Bait</span>!</h2>
 
       <div class="portabilidad-container">
         <div class="portabilidad-img-left">
-          <img src="./assets/promos/chica con cel porta.png" alt="Chica Bait" />
+          <div class="circulo-decorativo">
+            <img
+              src="./assets/promos/chica con cel porta.png"
+              alt="Chica Bait"
+            />
+          </div>
         </div>
         <div class="portabilidad-texto">
           <p>
-            Disfruta de <strong>9 GB</strong> <br> Y redes sociales ilimitadas </br> por solo $100 al mes.
+            Disfruta de <strong>9 GB</strong><br />
+            Y redes sociales ilimitadas<br />
+            por solo $100 al mes.
           </p>
           <button
-             onclick="abrirChatSucursal('Luga', 'Hola Luga, quiero información sobre portabilidad')"
+            onclick="abrirChatSucursal('Luga', 'Hola Luga, quiero información sobre portabilidad')"
             class="btn-portabilidad"
           >
             Solicita información
@@ -1108,9 +1115,9 @@
         <div class="footer-card">
           <h3>Síguenos</h3>
           <div class="footer-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/lugaphmx" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
           </div>
         </div>
       </div>
