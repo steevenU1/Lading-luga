@@ -240,6 +240,7 @@
       <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
+   
     <script>
       const carousel = document.getElementById("carousel");
       const slides = document.querySelectorAll(".carousel-slide");
@@ -282,7 +283,7 @@
         updateDots();
       }
 
-      setInterval(() => showSlide(index + 1), 5000);
+      setInterval(() => showSlide(index + 1), 2500);
 
       updateDots(); // inicial
     </script>
@@ -1066,7 +1067,7 @@
         </div>
         <div class="portabilidad-texto">
           <p>
-            Disfruta de 9 GB + redes sociales ilimitadas por solo $100 al mes.
+            Disfruta de <strong>9 GB</strong> <br> Y redes sociales ilimitadas </br> por solo $100 al mes.
           </p>
           <button
             onclick="abrirChatSucursal('Portabilidad')"
