@@ -294,12 +294,12 @@
         <p>Queremos mantenerte conectado con financiamiento accesible.</p>
         <button
           class="contact-button"
-          onclick="event.preventDefault(); abrirChatSucursal('Luga')"
+          onclick="event.preventDefault(); abrirChatSucursal('Luga', 'Hola Luga, quiero estrenar celular')"
         >
           <a
             class="contact-button--link"
             href="#"
-            onclick="event.preventDefault(); abrirChatSucursal('Luga')"
+            onclick="event.preventDefault(); abrirChatSucursal('Luga', 'Hola Luga, quiero estrenar celular')"
             >Estrena celular</a
           >
         </button>
@@ -968,15 +968,16 @@
 
     <!-- Script para enviar WA -->
     <script>
-      function abrirChatSucursal(nombreSucursal) {
-        const numero = "5215627158249"; // cambia por tu número
-        const mensaje = `Hola Luga!, quiero información para comprar en la sucursal ${nombreSucursal}`;
-        const url = `https://wa.me/${numero}?text=${encodeURIComponent(
-          mensaje
-        )}`;
-        window.open(url, "_blank");
-      }
-    </script>
+  function abrirChatSucursal(nombreSucursal, mensajePersonalizado = "") {
+    const numero = "5215627158249"; // tu número
+    const mensajeBase = mensajePersonalizado
+      ? mensajePersonalizado
+      : `Hola Luga!, quiero información para comprar en la sucursal ${nombreSucursal}`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensajeBase)}`;
+    window.open(url, "_blank");
+  }
+</script>
 
     <!-- Script para animaciones -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -1070,7 +1071,7 @@
             Disfruta de <strong>9 GB</strong> <br> Y redes sociales ilimitadas </br> por solo $100 al mes.
           </p>
           <button
-            onclick="abrirChatSucursal('Portabilidad')"
+             onclick="abrirChatSucursal('Luga', 'Hola Luga, quiero información sobre portabilidad')"
             class="btn-portabilidad"
           >
             Solicita información
