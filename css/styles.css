@@ -121,7 +121,62 @@ body {
   object-fit: cover;
 }
 
+.planes-bait-gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4rem;          /* separación entre tarjetas */
+  justify-content:center;
+  align-items:flex-start;
+  
+}
 
+.plan-link{
+  display:block;
+  width:190px;       /* ajusta al mismo ancho de las imágenes (≈ 190 px) */
+  transition:transform .2s ease;
+}
+
+.plan-link img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+}
+
+.plan-link:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+@media(max-width:480px){
+  .plan-link{width:100%}  /* en pantallas muy pequeñas cada tarjeta a ancho completo */
+}
+
+.titulo-seccion-bait {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+}
+
+.titulo-seccion-bait h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.titulo-seccion-bait .subrayado {
+  width: 200px;
+  height: 6px;
+  background-color: #ffd600; /* Amarillo BAIT */
+  border-radius: 3px;
+  margin: 0.4rem auto 0;
+}
+
+@media (max-width: 480px) {
+  .planes-bait-gallery .plan-link {
+    width: 150px;   /* antes ~190 px; ajústalo a tu gusto */
+  }
+}
 
 .credit-section {
   display: flex;
@@ -1246,4 +1301,3 @@ body {
     font-size: 16px;
   }
 }
-
