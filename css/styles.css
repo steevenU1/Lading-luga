@@ -178,6 +178,57 @@ body {
   }
 }
 
+.cta-bait-equipos{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+  padding:1rem 1.5rem;
+  background:#001489;          /* Azul Bait */
+  color:#fff;
+  font-family:"Poppins",Arial,sans-serif;
+  text-align:center;
+  margin-top: 20px;
+}
+
+.cta-bait-equipos .cta-text{
+  margin:0;
+  font-size:1.2rem;
+  line-height:1.4;
+}
+.cta-text .destacado {
+  color: #ffd600;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.cta-bait-equipos .cta-text .separator{
+  margin:0 .5rem;
+  color:#ffd600;               /* Amarillo */
+}
+
+.btn-scroll{
+  padding:.55rem 1.4rem;
+  background:#ffd600;
+  font-size: 1.4rem;
+  color:#000;
+  font-weight:700;
+  border-radius:1.7rem;
+  text-decoration:none;
+  transition:opacity .2s;
+  margin-left: 20px;
+}
+
+.btn-scroll:hover{opacity:.85}
+
+/* Responsive: apila texto y botón en móvil */
+@media(max-width:575.98px){
+  .cta-bait-equipos{
+    flex-direction:column;
+  }
+}
+
 .credit-section {
   display: flex;
   background-color: #f5f5f5;
